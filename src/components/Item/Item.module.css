@@ -1,0 +1,40 @@
+.done {
+    text-decoration: line-through;
+}
+
+.button {
+    opacity: 0;
+    transition: all .2s;
+    flex: 5;
+    background: 0 0;
+    border: none;
+    border-radius: 2px;
+    color: #757575;
+    margin: 0;
+    padding: 0 16px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    overflow: hidden;
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin-right: auto;
+    align-items: center;
+    flex: 10;
+}
+
+.item:hover button:not(.checkbox) {
+    opacity: 1;
+    
+}
