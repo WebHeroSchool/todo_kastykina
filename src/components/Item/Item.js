@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import styles from './Item.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const Item = ({ value, isDone }) => (<div className ={styles.item   
+const Item = ({ value, isDone, onClickDone }) => (<div className ={styles.item   
 }>
     <Checkbox
             checked={isDone}
@@ -11,6 +11,7 @@ const Item = ({ value, isDone }) => (<div className ={styles.item
             value="default"
             flex="1"
             inputProps={{ 'aria-label': 'checkbox with default color' }}
+            onClick={() => onClickDone(isDone)}
         />
         <label className={
             classnames ({
