@@ -24,13 +24,15 @@ class App extends React.Component {
            
     };
 
+    onClickDone = isDone => console.log(isDone);
+    
     render() {
         return (
             <div className = {styles.wrap}>
             <h1 className = {styles.header}>todos</h1>
             <div className ={styles.todosWrap}>
             <InputItem />
-            <ItemList items = { this.state.items } />
+            <ItemList items = { this.state.items } onClickDone={this.onClickDone} />
             <Footer count = {3} />
             </div>
         </div>);
