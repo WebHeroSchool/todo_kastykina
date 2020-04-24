@@ -12,6 +12,7 @@
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
+    height: 32px;
     text-transform: uppercase;
     letter-spacing: 0;
     overflow: hidden;
@@ -26,12 +27,4 @@
 .button:hover {
     background: #757575; 
     color: black;
-}
-
-.warning {
-    opacity: 0;
-}
-
-.emptyValue {
-
 }

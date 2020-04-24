@@ -7,44 +7,65 @@ class InputItem extends React.Component {
     inputValue: '',
   };
 
-  onButtonClick = () => {
-    this.setState({
+  inputValueChange = event => this.setState({ inputValue: event.target.value.toUpperCase() });
+
+  onSubmit= (event) => { 
+      event.preventDefault();
+      this.props.onClickAdd(this.state.inputValue);  
+
+      this.setState ({
       inputValue: ''
-    });
+   });
+  };
 
-    this.props.onClickAdd(this.state.inputValue);
-  } 
-
+  
   render() {
-    
+   const error = this.props.isEmptyField;
+   let textField;
+   if(error) {
+    textField = <TextField
+      error
+      id="standard-full-width"
+      label=""
+      style={{ margin: 0}}
+      placeholder="What needs to be done?"
+      helperText = "Пожалуйста, заполните поле!"
+      fullWidth
+      margin="normal"
+      InputLabelProps={{
+      shrink: true,}}
+      value={this.state.inputValue}
+      onChange ={ this.inputValueChange }
+      />
 
-    return (<div>
-        <div
-           className ={styles.itemInput}>
-        <TextField         
-           id="standard-full-width"
-           label=""
-           style={{ margin: 0}}
-           placeholder="What needs to be done?"
-           helperText=""
-           fullWidth
-           margin="normal"
-           InputLabelProps={{
-           shrink: true,}}
-           value={this.state.inputValue}
-           onChange ={event => this.setState({ inputValue: event.target.value })}
-        />
+   } else {
+    textField = <TextField
+      id="standard-full-width"
+      label=""
+      style={{ margin: 0}}
+      placeholder="What needs to be done?"
+      helperText=""
+      fullWidth
+      margin="normal"
+      InputLabelProps={{
+      shrink: true,}}
+      value={this.state.inputValue}
+      onChange ={ this.inputValueChange }
+      />
+   }
+
+    return (
+        <form
+           className ={styles.itemInput}
+           onSubmit={this.onSubmit}>
+        {textField}
         <button
-            className = { styles.button}
-            onClick={this.onButtonClick}> 
+            className = { styles.button}>
             ADD
         </button>
           
-        </div>
-          <span className={ styles.warning }>
-            This field cannot be empty!
-          </span>
-        </div>);
+        </form>
+        );
   }
 };
 
