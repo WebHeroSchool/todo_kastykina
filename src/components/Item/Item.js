@@ -24,7 +24,7 @@ const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (<div classN
        <button
              className = { styles.button}
              onClick={() => onClickDelete(id)} >
-             Delete
+             DELETE
         </button>
 
 </div>);
