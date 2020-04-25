@@ -1,0 +1,30 @@
+.itemInput {
+    display: flex;
+}
+
+.button {
+    margin: 0;
+    border: 1px solid #757575;
+    border-radius: 2px;
+    color: #757575;
+    background: #f8f2f2;
+    padding: 0 16px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 32px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    overflow: hidden;
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button:hover {
+    background: #757575; 
+    color: black;
+}
