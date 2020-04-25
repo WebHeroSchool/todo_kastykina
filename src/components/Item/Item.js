@@ -29,4 +29,8 @@ const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (<div classN
 
 </div>);
 
+Item.defaultProps = {
+    value: " Добавьте дело в список."
+};
+
 export default Item;
