@@ -4,31 +4,50 @@ import PropTypes from 'prop-types';
 import styles from './Item.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const Item = ({ value, isDone, onClickDone, id, onClickDelete }) => (<div className ={styles.item   
-}>
-    <Checkbox
-            checked={isDone}
-            color="default"
-            value="default"
-            flex="1"
-            inputProps={{ 'aria-label': 'checkbox with default color' }}
-            onClick={() => onClickDone(id)}
-        />
-        <label className={
-            classnames ({
-                [styles.item]: true,
-                [styles.done]: isDone
-            })
-        }>
-            { value }
-        </label>
-       <button
-             className = { styles.button}
-             onClick={() => onClickDelete(id)} >
-             DELETE
-        </button>
+class Item extends React.Component {
+    componentDidMount() {
+        console.log('componentDidMount');
+    }
 
-</div>);
+    componentDidUpdate() {
+        console.log('componentDidUpdate');
+    }
+
+    componentWillUnmount() {
+        console.log('componentWillUnmount');
+    }
+
+    render() {
+        const { value, isDone, onClickDone, id, onClickDelete } = this.props;
+    
+    return (
+     <div className ={styles.item}>
+    
+        <Checkbox
+                checked={isDone}
+                color="default"
+                value="default"
+                flex="1"
+                inputProps={{ 'aria-label': 'checkbox with default color' }}
+                onClick={() => onClickDone(id)}
+            />
+            <label className={
+                classnames ({
+                    [styles.item]: true,
+                    [styles.done]: isDone
+                })
+            }>
+                { value }
+            </label>
+           <button
+                 className = { styles.button}
+                 onClick={() => onClickDelete(id)} >
+                 DELETE
+            </button>
+    
+    </div>);
+    }
+}
 
 Item.propTypes = {
     value: PropTypes.string.isRequired,
