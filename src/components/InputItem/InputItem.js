@@ -7,7 +7,7 @@ class InputItem extends React.Component {
     inputValue: '',
   };
 
-  inputValueChange = event => this.setState({ inputValue: event.target.value.toUpperCase() });
+  inputValueChange = event => this.setState({ inputValue: event.target.value });
 
   onSubmit= (event) => { 
       event.preventDefault();

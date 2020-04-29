@@ -1,79 +1,33 @@
 import React from 'react';
-import InputItem  from '../InputItem/InputItem';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Card from '@material-ui/core/Card';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+
+import Todo  from '../Todo/Todo';
+import About from '../About/About';
+import Contacts from '../Contacts/Contacts';
 
 import styles from './App.module.css';
-  
-class App extends React.Component {
-   maxId = 4;
-   state = {
-        items: [
-           {
-              value: 'Learn React',
-              isDone: false,
-              id: 1
-           },
-           {
-               value: 'Read a book', 
-               isDone: false,
-               id: 2
-           },
-           {
-               value: 'Watch a movie',
-               isDone: true,
-               id: 3
-           }
-        ],
-        isEmptyField: false
-    };
 
-    onClickDone = id => {
-        const newItemList = this.state.items.map(item => {
-            const newItem = {...item};
-            if(item.id === id) {
-                newItem.isDone = !item.isDone;
-            }
-
-            return newItem;
-        })
-        this.setState({ items: newItemList});
-    }
-
-    onClickDelete = id => this.setState(state => ({ items: state.items.filter(item => item.id !== id)})); 
-
-    onClickAdd = value => {
-        if(value !=='') {
-            this.setState(state => ({
-                items: [
-                    ...state.items,
-                    {
-                        value,
-                        isDone: false,
-                        id: this.maxId ++
-                    }
-                ],
-                isEmptyField: false 
-            }));
-        } else {
-            this.setState(state => ({
-                isEmptyField: true}))
-        }
-    }
-   
-    render() {
-        const itemsDone = this.state.items.filter((el) => el.isDone).length;
-        const itemsLeft = this.state.items.length - itemsDone;
-        return (
-            <div className = {styles.wrap}>
-            <h1 className = {styles.header}>todos</h1>
-            <div className ={styles.todosWrap}>
-            <InputItem  onClickAdd={this.onClickAdd} isEmptyField={this.state.isEmptyField} />
-            <ItemList items = { this.state.items } onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} /> 
-            <Footer count = { itemsLeft } />
-            </div>
-        </div>);
-    }
-};
+const App = () =>
+ (<Router>
+  <div className={styles.wrap}>
+    <Card className={styles.sidebar}>
+        <MenuList>
+            <Link to='/' className={styles.link}><MenuItem className={styles.item}> Обо мне </MenuItem></Link>
+            <Link to='/todo' className={styles.link}><MenuItem> Дела </MenuItem></Link>
+            <Link to='/contacts' className={styles.link}><MenuItem> Контакты </MenuItem></Link>
+        </MenuList>
+    </Card>
+    
+    <Card className={styles.content}>
+        <Route path='/' exact component={About} />
+        <Route path='/todo' component={Todo} />
+        <Route path='/contacts' component={Contacts} />
+    </Card>
+    </div>
+  </Router> 
+);
 
 export default App;
