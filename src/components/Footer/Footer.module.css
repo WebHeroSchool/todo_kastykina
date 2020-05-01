@@ -6,3 +6,7 @@
 .filter {
     display: flex;
 }
+
+.filter:active{
+    background: red;
+}

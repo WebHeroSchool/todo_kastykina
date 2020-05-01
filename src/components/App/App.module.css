@@ -7,10 +7,6 @@ body {
     font-family: 'Manrope', sans-serif;
 }
 
-.item {
-    font-family: 'Manrope', sans-serif;
-}
-
 .sidebar {
     grid-area: sidebar;
 }
@@ -28,4 +24,5 @@ body {
 
 .link {
     text-decoration: none;
+    color: #695646;
 }

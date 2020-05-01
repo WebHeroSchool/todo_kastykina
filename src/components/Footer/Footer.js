@@ -10,7 +10,7 @@ class Footer extends React.Component {
         {name: 'completed', label: 'Completed'}
     ];
  render() {
- const { count, onFilterChange} = this.props;
+ const { count, onFilterChange, onClearComplete, id} = this.props;
     const buttons = this.buttons.map(({name, label}) => {
         return(
             <Button size="medium"
@@ -31,7 +31,8 @@ return(<div className={styles.wrap}>
         <div className={styles.filter} >
           {buttons}
         </div>
-        <Button size="medium" >
+        <Button size="medium"
+         onClick={() => onClearComplete(id)}>
           Clear Completed
           </Button>
         </div>
