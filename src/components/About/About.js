@@ -33,7 +33,7 @@ class About extends React.Component {
         });
 
         octokit.users.getByUsername({
-            username: 'nfgnfn'
+            username: 'galigalinochka'
           })
           .then(({ data }) =>{ console.log(data);
         
