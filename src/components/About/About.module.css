@@ -1,0 +1,41 @@
+.header1 {
+    color: #695646;
+    text-align: center;
+}
+
+.list {
+    padding-left: 50px;
+}
+
+.listItem {
+    color: #695646;
+}
+
+.header2 {
+    color: #695646;
+    padding-left: 45px;
+}
+
+.avatar {
+    height: 100px;
+    width: 100px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.name, .bio {
+    display: block;
+    font-weight: bold;
+}
+
+.link {
+    text-decoration: none;
+    color: #695646;
+}
+
+.link:hover {
+    color: blue;
+}
