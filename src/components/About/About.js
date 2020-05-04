@@ -56,24 +56,31 @@ class About extends React.Component {
         const { isLoading, repoList, userInfo, isError, errorMessage } = this.state;
         return (
             <div className={styles.wrap}>
-                <h1 className={styles.header1}>Обо мне</h1>
-                {isError ? 'Ошибка. Невозможно отобразить. ' + errorMessage :
-                <div>
-                <div className={styles.info}>
-                <img src ={userInfo.avatar_url} className={styles.avatar} alt='avatar'/>
-                <div>
-                <p className={styles.name}>{userInfo.name ? userInfo.name : userInfo.login}</p>
-                <p className={styles.bio}>{userInfo.bio}</p>
-                </div>
-                </div>
-                <h2 className={styles.header2}>{ isLoading ? <LinearProgress color="secondary" /> : 'Мои репозитории:' }</h2>
-                {!isLoading && <ol className={styles.list}>
-                    {repoList.map(repo => (<li key={repo.id}><a href={repo.html_url} className={styles.link}>
-                        {repo.name}
-                        </a>
-                        </li>))}
-                    </ol>}
+                { isLoading ? <LinearProgress color="secondary" /> : 
+                    <div>
+                        <h1 className={styles.header1}>Обо мне</h1>
+                        {isError ? 'Ошибка. Невозможно отобразить. ' + errorMessage :
+                            <div>
+                            <div className={styles.info}>
+                                <img src ={userInfo.avatar_url} className={styles.avatar} alt='avatar'/>
+                            <div>
+                                <p className={styles.name}>{userInfo.name ? userInfo.name : userInfo.login}</p>
+                                <p className={styles.bio}>{userInfo.bio}</p>
+                            </div>
+                            </div>
+                            <div>
+                            <h2 className={styles.header2}>Мои репозитории:</h2>
+                                <ol className={styles.list}>
+                                    {repoList.map(repo => (<li key={repo.id}><a href={repo.html_url} className={styles.link}>
+                                    {repo.name}
+                                     </a>
+                                </li>))}
+                                </ol>
+                            </div>
+                            </div>
+                        }
                     </div>
+                
                 }
             </div>
         );
