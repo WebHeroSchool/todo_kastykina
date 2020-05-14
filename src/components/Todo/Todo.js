@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import InputItem  from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 
 import styles from './Todo.module.css';
   
-class Todo extends React.Component {
-   maxId = 4;
-   state = {
+const Todo = () => {
+   let maxId = 4;
+   const initialState = {
         items: [
            {
               value: 'Learn React',
@@ -29,8 +29,12 @@ class Todo extends React.Component {
         filter: ''
     };
 
-    onClickDone = id => {
-        const newItemList = this.state.items.map(item => {
+        const [items, setItems] = useState(initialState.items);
+        const [filter, setFilter] = useState(initialState.filter);//sortTask
+        const [isEmptyField, setEmpty] = useState(initialState.isEmptyField);
+        
+    const onClickDone = id => {
+        const newItemList = items.map(item => {
             const newItem = {...item};
             if(item.id === id) {
                 newItem.isDone = !item.isDone;
@@ -38,66 +42,68 @@ class Todo extends React.Component {
 
             return newItem;
         })
-        this.setState({ items: newItemList});
-    }
+        setItems(newItemList);
+    };
 
-    onClickDelete = id => this.setState(state => ({ items: state.items.filter(item => item.id !== id)}));
-
-    onClickAdd = value => {
+    const onClickDelete = id => {
+    const newItemList = items.filter(item => item.id !== id);
+    setItems(newItemList);
+    };
+    
+    const onClickAdd = value => {
         if(value !=='') {
-            this.setState(state => ({
-                items: [
-                    ...state.items,
-                    {
-                        value,
-                        isDone: false,
-                        id: this.maxId ++
-                    }
-                ],
-                isEmptyField: false 
-            }));
+            const newItems = [...items, 
+            {
+                value,
+                isDone: false,
+                id: maxId ++
+            }
+        ];
+            setItems(newItems);
+            setEmpty(false)
+          
         } else {
-            this.setState(state => ({
-                isEmptyField: true}))
+            setEmpty(true)
         }
     };
 
-    onFilterChange = (filter) => {
-        this.setState({ filter});
-    }
-
-    filter(items, filter) {
-       switch(filter) {
+    const onFilterChange = (filter) => {
+        setFilter( filter);
+    };
+    
+    let filterItems;
+    switch(filter) {
         case 'all':
-          return items;
+            filterItems = items;
+            break;
         case 'active':
-            return items.filter((item) => !item.isDone);
+            filterItems = items.filter((item) => !item.isDone);
+            break;
         case 'completed':
-            return items.filter((item) => item.isDone);           
+            filterItems = items.filter((item) => item.isDone);  
+            break;         
         default:
-        return items;
-       }
-    }
-   
-    render() {
-        const { items, filter } = this.state;
-        const visibleItems = this.filter(items, filter);
-        const itemsDone = this.state.items.filter((el) => el.isDone).length;
-        const itemsLeft = this.state.items.length - itemsDone;
+            filterItems = items;
+    };
+
+        const visibleItems = filter;
+        const itemsDone = items.filter((el) => el.isDone).length;
+        const itemsLeft = items.length - itemsDone;
         return (
             <div className = {styles.wrap}>
             <h1 className = {styles.header}>todos</h1>
             <div className ={styles.todosWrap}>
-            <InputItem  onClickAdd={this.onClickAdd} isEmptyField={this.state.isEmptyField} />
+            <InputItem  onClickAdd={onClickAdd} isEmptyField={isEmptyField} />
             <ItemList items = { visibleItems }
-                      onClickDone={this.onClickDone}
-                      onClickDelete={this.onClickDelete} /> 
+                      onClickDone={onClickDone}
+                      onClickDelete={onClickDelete} /> 
             <Footer count = { itemsLeft }
-                    filter={filter}
-                    onFilterChange={this.onFilterChange} />
+                    filter={filterItems}
+                    onFilterChange={onFilterChange} />
             </div>
         </div>);
-    }
+    
 };
+
 
 export default Todo;
