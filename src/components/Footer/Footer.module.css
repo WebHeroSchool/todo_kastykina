@@ -6,3 +6,7 @@
 .filter {
     display: flex;
 }
+
+.active {
+    color: red;
+}

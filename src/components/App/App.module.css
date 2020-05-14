@@ -28,4 +28,6 @@ body {
 
 .link {
     text-decoration: none;
+    color: #695646;
+    text-transform: uppercase;
 }

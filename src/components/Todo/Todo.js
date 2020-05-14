@@ -78,7 +78,11 @@ class Todo extends React.Component {
         return items;
        }
     }
-   
+
+    onClearCompleted = () => {
+        this.setState(state => ({ items: state.items.filter(item => !item.isDone)}));
+    }
+ 
     render() {
         const { items, filter } = this.state;
         const visibleItems = this.filter(items, filter);
@@ -94,7 +98,8 @@ class Todo extends React.Component {
                       onClickDelete={this.onClickDelete} /> 
             <Footer count = { itemsLeft }
                     filter={filter}
-                    onFilterChange={this.onFilterChange} />
+                    onFilterChange={this.onFilterChange}
+                    onClearCompleted={this.onClearCompleted} />
             </div>
         </div>);
     }
