@@ -21,7 +21,6 @@ class InputItem extends React.Component {
   
   render() {
    const emptyField= this.props.isEmptyField;
-   const duplicated= this.props.isDuplicated;
    let textField;
    if(emptyField) {
     textField = <TextField
@@ -38,22 +37,7 @@ class InputItem extends React.Component {
       value={this.state.inputValue}
       onChange ={ this.inputValueChange }
       />
-   } else if(duplicated) {
-    textField = <TextField
-      error
-      id="standard-full-width"
-      label=""
-      style={{ margin: 0}}
-      placeholder="What needs to be done?"
-      helperText="Такая задача уже есть в Вашем списке"
-      fullWidth
-      margin="normal"
-      InputLabelProps={{
-      shrink: true,}}
-      //value={this.state.inputValue}
-      onChange ={ this.inputValueChange }
-      />
-  } else {
+   } else {
     textField = <TextField
     id="standard-full-width"
     label=""
