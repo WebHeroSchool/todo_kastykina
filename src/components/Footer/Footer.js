@@ -1,20 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import styles from './Footer.module.css';
 
+
 class Footer extends React.Component {
+
     buttons = [
         {name: 'all', label: 'All'},
         {name: 'active', label: 'Active'},
         {name: 'completed', label: 'Completed'}
     ];
+
  render() {
- const { count, onFilterChange, onClearCompleted} = this.props;
+ const { count, onFilterChange, onClearCompleted, filter} = this.props;
     const buttons = this.buttons.map(({name, label}) => {
+    const isActive = filter === name;
+    const buttonClass = isActive ? 'contained' : 'text';
         return(
-            <Button checked={color === 'blue'}
+            <Button variant ={`${buttonClass}`}
                     size="medium"
                     key={name}
                     onClick={() => onFilterChange(name)}>
@@ -27,15 +31,16 @@ class Footer extends React.Component {
 
 
 return(<div className={styles.wrap}>
-        <Button size="medium" >
+        <Button size="medium">
           {count} items left
         </Button>
         <div className={styles.filter} >
           {buttons}
         </div>
         <Button size="medium" 
-                onClick={() => onClearCompleted()
-                }>
+                name ='clear completed'
+                onClick={() => onClearCompleted()}
+        >
           Clear Completed
           </Button>
         </div>

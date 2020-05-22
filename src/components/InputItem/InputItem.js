@@ -20,9 +20,10 @@ class InputItem extends React.Component {
 
   
   render() {
-   const error = this.props.isEmptyField;
+   const emptyField= this.props.isEmptyField;
+   const duplicated= this.props.isDuplicated;
    let textField;
-   if(error) {
+   if(emptyField) {
     textField = <TextField
       error
       id="standard-full-width"
@@ -37,21 +38,35 @@ class InputItem extends React.Component {
       value={this.state.inputValue}
       onChange ={ this.inputValueChange }
       />
-
-   } else {
+   } else if(duplicated) {
     textField = <TextField
+      error
       id="standard-full-width"
       label=""
       style={{ margin: 0}}
       placeholder="What needs to be done?"
-      helperText=""
+      helperText="Такая задача уже есть в Вашем списке"
       fullWidth
       margin="normal"
       InputLabelProps={{
       shrink: true,}}
-      value={this.state.inputValue}
+      //value={this.state.inputValue}
       onChange ={ this.inputValueChange }
       />
+  } else {
+    textField = <TextField
+    id="standard-full-width"
+    label=""
+    style={{ margin: 0}}
+    placeholder="What needs to be done?"
+    helperText=""
+    fullWidth
+    margin="normal"
+    InputLabelProps={{
+    shrink: true,}}
+    value={this.state.inputValue}
+    onChange ={ this.inputValueChange }
+    />
    }
 
     return (

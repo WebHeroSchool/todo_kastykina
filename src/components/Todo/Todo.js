@@ -26,7 +26,7 @@ class Todo extends React.Component {
            }
         ],
         isEmptyField: false,
-        filter: ''
+        filter: '',
     };
 
     onClickDone = id => {
@@ -54,7 +54,7 @@ class Todo extends React.Component {
                         id: this.maxId ++
                     }
                 ],
-                isEmptyField: false 
+                isEmptyField: false,
             }));
         } else {
             this.setState(state => ({
@@ -82,7 +82,7 @@ class Todo extends React.Component {
     onClearCompleted = () => {
         this.setState(state => ({ items: state.items.filter(item => !item.isDone)}));
     }
- 
+    
     render() {
         const { items, filter } = this.state;
         const visibleItems = this.filter(items, filter);
@@ -92,7 +92,9 @@ class Todo extends React.Component {
             <div className = {styles.wrap}>
             <h1 className = {styles.header}>todos</h1>
             <div className ={styles.todosWrap}>
-            <InputItem  onClickAdd={this.onClickAdd} isEmptyField={this.state.isEmptyField} />
+            <InputItem  onClickAdd={this.onClickAdd}
+                        isEmptyField={this.state.isEmptyField}
+            />
             <ItemList items = { visibleItems }
                       onClickDone={this.onClickDone}
                       onClickDelete={this.onClickDelete} /> 
