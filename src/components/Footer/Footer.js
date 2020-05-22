@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import styles from './Footer.module.css';
 
@@ -13,8 +14,8 @@ class Footer extends React.Component {
  const { count, onFilterChange, onClearCompleted} = this.props;
     const buttons = this.buttons.map(({name, label}) => {
         return(
-            <Button size="medium"
-                    className={styles.active}
+            <Button checked={color === 'blue'}
+                    size="medium"
                     key={name}
                     onClick={() => onFilterChange(name)}>
              {label}
