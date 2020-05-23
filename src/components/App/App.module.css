@@ -17,16 +17,16 @@ body {
 }
 
 .sidebar {
-    grid-area: sidebar;
+    flex: 1;
 }
 
 .content {
-    grid-area: content;
+    flex: 3;
 }
 
 .wrap {
-    display: grid;
-    grid-template-areas: 'sidebar ... content content';
+    display: flex;
+    justify-content: space-between;
     margin: auto;
     max-width: 800px;
  
@@ -36,4 +36,10 @@ body {
     text-decoration: none;
     color: #695646;
     text-transform: uppercase;
+}
+
+img {
+    position: absolute;
+    height: 27px;
+    width: 103px;
 }

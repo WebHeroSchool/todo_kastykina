@@ -2,6 +2,7 @@ import React from 'react';
 import InputItem  from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
+import ReactLogoPng from '../../img/WHS.png';
 
 import styles from './Todo.module.css';
   
@@ -102,6 +103,9 @@ class Todo extends React.Component {
                     filter={filter}
                     onFilterChange={this.onFilterChange}
                     onClearCompleted={this.onClearCompleted} />
+            </div>
+            <div className={styles.img}>
+            <img src={ReactLogoPng} alt='Разработано в WebHeroSchool' />
             </div>
         </div>);
     }
