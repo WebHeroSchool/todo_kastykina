@@ -38,7 +38,6 @@ return(<div className={styles.wrap}>
           {buttons}
         </div>
         <Button size="medium" 
-                name ='clear completed'
                 onClick={() => onClearCompleted()}
         >
           Clear Completed

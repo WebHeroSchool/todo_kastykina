@@ -28,6 +28,7 @@ class Todo extends React.Component {
         ],
         isEmptyField: false,
         filter: '',
+        isDuplicated: false
     };
 
     onClickDone = id => {
@@ -43,9 +44,9 @@ class Todo extends React.Component {
     }
 
     onClickDelete = id => this.setState(state => ({ items: state.items.filter(item => item.id !== id)}));
-
+    
     onClickAdd = value => {
-        if(value !=='') {
+         if(value !=='') {
             this.setState(state => ({
                 items: [
                     ...state.items,
@@ -85,28 +86,29 @@ class Todo extends React.Component {
     }
     
     render() {
-        const { items, filter } = this.state;
+        const { items, filter, isEmptyField, isDuplicated } = this.state;
         const visibleItems = this.filter(items, filter);
         const itemsDone = this.state.items.filter((el) => el.isDone).length;
         const itemsLeft = this.state.items.length - itemsDone;
         return (
             <div className = {styles.wrap}>
-            <h1 className = {styles.header}>todos</h1>
-            <div className ={styles.todosWrap}>
-            <InputItem  onClickAdd={this.onClickAdd}
-                        isEmptyField={this.state.isEmptyField}
-            />
-            <ItemList items = { visibleItems }
-                      onClickDone={this.onClickDone}
-                      onClickDelete={this.onClickDelete} /> 
-            <Footer count = { itemsLeft }
-                    filter={filter}
-                    onFilterChange={this.onFilterChange}
-                    onClearCompleted={this.onClearCompleted} />
-            </div>
-            <div className={styles.img}>
-            <img src={ReactLogoPng} alt='Разработано в WebHeroSchool' />
-            </div>
+                <h1 className = {styles.header}>todos</h1>
+                <div className ={styles.todosWrap}>
+                <InputItem  onClickAdd={this.onClickAdd}
+                            isEmptyField={isEmptyField}
+                            isDuplicated={isDuplicated}
+                />
+                <ItemList items = { visibleItems }
+                        onClickDone={this.onClickDone}
+                        onClickDelete={this.onClickDelete} /> 
+                <Footer count = { itemsLeft }
+                        filter={filter}
+                        onFilterChange={this.onFilterChange}
+                        onClearCompleted={this.onClearCompleted} />
+                </div>
+                <div className={styles.img}>
+                <img src={ReactLogoPng} alt='Разработано в WebHeroSchool' />
+                </div>
         </div>);
     }
 };

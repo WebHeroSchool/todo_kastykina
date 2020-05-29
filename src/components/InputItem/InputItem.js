@@ -21,43 +21,25 @@ class InputItem extends React.Component {
   
   render() {
    const emptyField= this.props.isEmptyField;
-   let textField;
-   if(emptyField) {
-    textField = <TextField
-      error
-      id="standard-full-width"
-      label=""
-      style={{ margin: 0}}
-      placeholder="What needs to be done?"
-      helperText = "Пожалуйста, заполните поле!"
-      fullWidth
-      margin="normal"
-      InputLabelProps={{
-      shrink: true,}}
-      value={this.state.inputValue}
-      onChange ={ this.inputValueChange }
-      />
-   } else {
-    textField = <TextField
-    id="standard-full-width"
-    label=""
-    style={{ margin: 0}}
-    placeholder="What needs to be done?"
-    helperText=""
-    fullWidth
-    margin="normal"
-    InputLabelProps={{
-    shrink: true,}}
-    value={this.state.inputValue}
-    onChange ={ this.inputValueChange }
-    />
-   }
-
+  
     return (
         <form
            className ={styles.itemInput}
            onSubmit={this.onSubmit}>
-        {textField}
+            <TextField
+                error = {emptyField ? true : false}
+                id="standard-full-width"
+                label=""
+                style={{ margin: 0}}
+                placeholder= "What needs to be done?"
+                helperText = { emptyField ? "Пожалуйста, заполните поле!" : ""}
+                fullWidth
+                margin="normal"
+                InputLabelProps={{
+                shrink: true,}}
+                value={this.state.inputValue}
+                onChange ={ this.inputValueChange }
+          />
         <button
             className = { styles.button}>
             ADD
