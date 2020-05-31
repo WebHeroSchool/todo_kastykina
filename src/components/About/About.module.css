@@ -58,24 +58,23 @@
 }
 
 .contactsButton {
-    background:linear-gradient(to bottom, #FFFFFF, #E6E6E6) #F5F5F5 repeat-x;
+    background-color: #ffd32d;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
     border-radius: 4px;
     border-style: solid;
     border-width: 1px;
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
     color: #333333;
-        text-decoration:none;
+    text-decoration:none;
     display:block;
     font-size: 14px;
-        width:120px;
     line-height: 20px;
     margin: 20px auto;
     padding: 4px 12px;
     text-align: center;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-    vertical-align: middle;
-  position: relative;
+    position: relative;
+    font-weight: 600;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   -webkit-transition-property: -webkit-transform;
