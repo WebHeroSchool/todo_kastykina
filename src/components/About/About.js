@@ -2,6 +2,9 @@ import React from 'react';
 import styles from './About.module.css';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { Octokit } from '@octokit/rest';
+import Card from '@material-ui/core/Card';
+import { BrowserRouter as Router} from 'react-router-dom';
+
 
 const octokit = new Octokit();
 
@@ -55,34 +58,43 @@ class About extends React.Component {
     render() {
         const { isLoading, repoList, userInfo, isError, errorMessage } = this.state;
         return (
+            
             <div className={styles.wrap}>
                 { isLoading ? <LinearProgress color="secondary" /> : 
-                    <div>
+                <Router>
+                    <Card>
                         <h1 className={styles.header1}>Обо мне</h1>
                         {isError ? 'Ошибка. Невозможно отобразить. ' + errorMessage :
                             <div>
                             <div className={styles.info}>
+                                <div className={styles.image}>
                                 <img src ={userInfo.avatar_url} className={styles.avatar} alt='avatar'/>
-                            <div>
+                                </div>
+                            <div className={styles.infoBlock}>
                                 <p className={styles.name}>{userInfo.name ? userInfo.name : userInfo.login}</p>
                                 <p className={styles.bio}>{userInfo.bio}</p>
+                                <a href="/contacts" style={{textDecoration: 'none'}}><div className={styles.contactsButton}>Посмотреть контакты</div></a>
                             </div>
                             </div>
-                            <div>
-                            <h2 className={styles.header2}>Мои репозитории:</h2>
-                                <ol className={styles.list}>
-                                    {repoList.map(repo => (<li key={repo.id}><a href={repo.html_url} className={styles.link}>
-                                    {repo.name}
-                                     </a>
-                                </li>))}
-                                </ol>
-                            </div>
+                           
                             </div>
                         }
-                    </div>
-                
+                    </Card>
+                   <Card>
+                   <div>
+                     <h2 className={styles.header2}>Мои репозитории:</h2>
+                         <ol className={styles.list}>
+                             {repoList.map(repo => (<li key={repo.id} className={styles.links}><a href={repo.html_url} className={styles.link}>
+                             {repo.name}
+                              </a>
+                         </li>))}
+                         </ol>
+                     </div>
+                   </Card>   
+                   </Router>         
                 }
             </div>
+            
         );
     }
     
