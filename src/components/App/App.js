@@ -13,39 +13,21 @@ import styles from './App.module.css';
 
 
 class App extends React.Component  {
-  state = {
-    flag: false
-  };
-
-  handleClick = () => {
-    this.setState ((state) => {
-      return { 
-         flag: !state.flag
-      }
-    })
-  }
+  
 
   render() {
-    const isActive = this.state.flag === true;
-    if(isActive) {
-      console.log('errr');
-      
-    }
+    
     return (<Router>
       <div className={styles.wrap}>
         <Card className={styles.sidebar}>
             <MenuList>
                 <Link to='/' className={styles.link}>
-                  <MenuItem className={styles.item}
-                            selected={isActive ? true : false}
-                            onClick={this.handleClick}>
+                  <MenuItem >
                     Обо мне 
                   </MenuItem >
                 </Link>
                 <Link to='/todo' className={styles.link}>
-                  <MenuItem className={styles.item}
-                            selected={isActive ? true : false}
-                            onClick={this.handleClick}>
+                  <MenuItem>
                       Дела
                   </MenuItem>
                 </Link>
