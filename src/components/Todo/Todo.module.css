@@ -24,6 +24,9 @@
     font-weight: 100;
     font-size: 90px;
     flex: 4;
+   /*text-shadow: #fcdc6a  3px 3px 3px; #fcdc6a  2px 2px 0, 
+    #fcdc6a  3px 3px 0, #fcdc6a  4px 4px 0, 
+    #fcdc6a  5px 5px 0;*/
 }
 
 .img {

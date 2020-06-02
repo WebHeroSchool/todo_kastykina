@@ -12,23 +12,30 @@ class Footer extends React.Component {
         {name: 'completed', label: 'Completed'}
     ];
 
+    
+
  render() {
- const { count, onFilterChange, onClearCompleted, filter} = this.props;
-    const buttons = this.buttons.map(({name, label}) => {
+ const { count, onFilterChange, onClearCompleted, filter, allItems, itemsDone } = this.props;
+ 
+  const buttons = this.buttons.map(({name, label}) => {
+    
+      
     const isActive = filter === name;
     const buttonClass = isActive ? 'contained' : 'text';
-        return(
+          return(
             <Button variant ={`${buttonClass}`}
                     size="medium"
                     key={name}
                     onClick={() => onFilterChange(name)}>
-             {label}
+             {label} ({name ==='all' ? `${allItems}` : false}
+                      {name === 'active' ? `${count}` : false}
+                      {name === 'completed' ? `${itemsDone}` : false})
+             
             </Button>
            
         );
     })
-
-
+ 
 
 return(<div className={styles.wrap}>
         <Button size="medium">
@@ -48,8 +55,6 @@ return(<div className={styles.wrap}>
 }
 
 }
-
-
 Footer.propTypes = {
     count: PropTypes.number.isRequired
 };

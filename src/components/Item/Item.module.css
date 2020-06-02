@@ -25,6 +25,10 @@
     text-decoration: none;
     text-align: center;
 }
+.button:hover {
+    color: #ffd32d;
+}
+
 
 .item {
     display: flex;
@@ -34,7 +38,12 @@
     flex: 10;
 }
 
-.item:hover button:not(.checkbox) {
+.item:hover button {
     opacity: 1;
+}
+
+.item:hover{
+    background-color: #fff9f9;
+    border-radius: 10px;
     
 }
