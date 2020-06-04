@@ -4,6 +4,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import { Octokit } from '@octokit/rest';
 import Card from '@material-ui/core/Card';
 import { BrowserRouter as Router} from 'react-router-dom';
+import classnames from 'classnames';
 
 
 const octokit = new Octokit();
@@ -20,7 +21,7 @@ class About extends React.Component {
     componentDidMount() {
         octokit.repos.listForUser({
             username: 'galigalinochka'
-        }).then(({ data }) =>{ //console.log(data);
+        }).then(({ data }) =>{ console.log(data);
         
             this.setState({
                 repoList: data,
@@ -38,7 +39,7 @@ class About extends React.Component {
         octokit.users.getByUsername({
             username: 'galigalinochka'
           })
-          .then(({ data }) =>{ console.log(data);
+          .then(({ data }) =>{ //console.log(data);
         
             this.setState({
                 userInfo: data,
@@ -57,13 +58,13 @@ class About extends React.Component {
 
     render() {
         const { isLoading, repoList, userInfo, isError, errorMessage } = this.state;
+        
         return (
             
             <div className={styles.wrap}>
                 { isLoading ? <LinearProgress color="secondary" /> : 
                 <Router>
                     <Card>
-                        <h1 className={styles.header1}>Обо мне</h1>
                         {isError ? 'Ошибка. Невозможно отобразить. ' + errorMessage :
                             <div>
                             <div className={styles.info}>
@@ -83,12 +84,26 @@ class About extends React.Component {
                    <Card>
                    <div>
                      <h2 className={styles.header2}>Мои репозитории:</h2>
-                         <ol className={styles.list}>
-                             {repoList.map(repo => (<li key={repo.id} className={styles.links}><a href={repo.html_url} className={styles.link}>
-                             {repo.name}
-                              </a>
-                         </li>))}
-                         </ol>
+                         <ul className={styles.repoList}>
+                             {repoList.map(repo => (
+                                <div key={repo.id} className={styles.repoLink}>
+                                    <a href={repo.html_url} className={styles.link}>
+                                        {repo.name}
+                                    </a>
+                                    <div className={styles.aboutRepo}>
+                                        <div className={classnames({
+                                            [styles.aboutRepoLanguage_html]: repo.language === 'HTML',
+                                            [styles.aboutRepoLanguage_css]: repo.language === 'CSS',
+                                            [styles.aboutRepoLanguage_js]: repo.language === 'JavaScript',
+                                            [styles.aboutRepoLanguage_null]: repo.language === null})
+                                        }>
+                                            {repo.language}</div>
+                                        <div className={styles.aboutRepoStar}>{repo.stargazers_count}</div>
+                                        <div className={styles.aboutRepoFork}>{repo.forks_count} </div>
+                                        <div className={styles.aboutRepoUpdated}> Обновлен {new Date(repo.updated_at).toLocaleDateString()} </div>
+                                    </div>
+                                </div>))}
+                         </ul>
                      </div>
                    </Card>   
                    </Router>         

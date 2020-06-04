@@ -3,8 +3,8 @@
     text-align: center;
 }
 
-.list {
-    padding-left: 50px;
+.repoList {
+    margin: auto;
 }
 
 .listItem {
@@ -31,10 +31,7 @@
     min-height: 150px;
     display: flex;
     justify-content: space-around;
-}
-
-.infoBlock {
- 
+    padding: 30px 0;
 }
 
 .name, .bio {
@@ -45,12 +42,23 @@
 .link {
     text-decoration: none;
     color: #695646;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
    
 }
 
-.links {
+.repoLink {
     padding: 10px;
     border: 1px solid  #695646;
+    border-radius: 10px;
+    margin: 10px 10px 10px 0;
+}
+
+.repoLink:hover {
+    background-color:  #fff9f9;
+    transform: translate(.5px,1px);
+    cursor: pointer;
 }
 
 .link:hover {
@@ -115,4 +123,71 @@
       -ms-transform: translateY(5px);
       transform: translateY(5px);
     }
+.aboutRepoLanguage_html, .aboutRepoLanguage_css, .aboutRepoLanguage_js, .aboutRepoLanguage_null {
+    display: flex;
+    align-items: center;
+    min-width: 82px;
+}
+
+.aboutRepoLanguage_html:before, .aboutRepoLanguage_css:before, .aboutRepoLanguage_js:before, .aboutRepoLanguage_null:before {
+    content: "";
+    margin-right: 6px;
+    bottom: 5px;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+}
+
+.aboutRepoLanguage_html:before {
+    background: #e34c26;
+}
+
+.aboutRepoLanguage_css:before {
+    background: #563d7c;
+}
+
+.aboutRepoLanguage_js:before {
+    background: #f1e05a ;
+}
+
+.aboutRepoLanguage_null:before {
+    background: #5f5b5a; ;
+}
+
+.aboutRepo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aboutRepoStar {
+    display: flex;
+    align-items: center;
+}
+
+.aboutRepoStar:before {
+    background: url('../../img/Star.svg');
+    content: "";
+    margin-right: 6px;
+    bottom: 5px;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+}
+
+.aboutRepoFork {
+    display: flex;
+    align-items: center;
+}
+
+.aboutRepoFork:before {
+    background: url('../../img/fork.svg');
+    content: "";
+    margin-right: 6px;
+    bottom: 5px;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
+}
+
 

@@ -25,6 +25,7 @@ body {
     flex-direction: column;
     border: transparent;
     list-style-type: none;
+    outline: none;
 }
 
 .content {
@@ -49,6 +50,14 @@ body {
     transition: .3s;
     font-weight: 600;
     list-style-type: none;
+    outline: none;
+    padding-left: 30px;
+}
+
+.link:hover{
+    background-color: #faf4df;
+    transform: translate(.5px,1px);
+    cursor: pointer;
 }
 
 img {
