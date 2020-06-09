@@ -7,6 +7,11 @@
     margin: auto;
 }
 
+.userInfo {
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+}
 .listItem {
     color: #695646;
 }
@@ -191,3 +196,65 @@
 }
 
 
+.pagination {
+    margin: 25px auto;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    outline: none;
+  }
+  .pagination > .active > a {
+    background-color: #ffd32d ;
+    border-color: #ffd32d ;
+    color: #000000;
+  }
+  .pagination > li > a {
+    border: 1px solid #ffd32d ;
+    padding: 5px 10px;
+    outline: none;
+    cursor: pointer;
+  }
+  .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    background-color: #ffd32d;
+    border-color: #ffd32d;
+    outline: none ;
+  }
+  .pagination > li > a, .pagination > li > span{
+    color: #ffd32d
+  }
+
+  .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span{
+    border-radius: unset
+  }
+
+  .repozitories {
+      min-height: 300px;
+  }
+
+  .error {
+   min-width: 267px;
+   min-height: 164px;
+  
+  }
+
+  .errorBlock {
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      flex-direction: column;
+      height: 300px;
+      flex-wrap: wrap; 
+    
+  }
+
+  .errorUserText {
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+  }
+
+.try {
+
+}
+
+  
