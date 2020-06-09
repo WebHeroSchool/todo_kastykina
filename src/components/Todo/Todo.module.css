@@ -26,15 +26,15 @@
     flex: 4;
 }
 
-.img {
+.imgBlock {
+    min-height: 50px;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end; 
-    flex: 1;
-    min-height: 100px;
+    align-items: flex-end;
 }
 
-img {
-    text-align: right;
-    padding: 5px;
+.whsLogo {
+    height: 27px;
+    width: 103px;
+    padding: 5px 10px;
 }

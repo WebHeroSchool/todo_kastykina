@@ -22,21 +22,22 @@
 }
 
 .avatar {
-    height: 110px;
-    width: 110px;
+    
+    max-width: 200px;
+    margin-right: 20px;
+    max-height: 200px;
     border-radius: 10px;
     border: 1px solid #ffd32d;
 }
 
-.image{
-   height: 120px;
+.infoBlock {
+    flex: 1;
 }
 
 .info {
     min-height: 150px;
     display: flex;
-    justify-content: space-around;
-    padding: 30px 0;
+    padding: 30px;
 }
 
 .name, .bio {
@@ -71,6 +72,7 @@
 }
 
 .contactsButton {
+    width: 50%;
     background-color: #ffd32d;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
     border-radius: 4px;
@@ -82,7 +84,7 @@
     display:block;
     font-size: 14px;
     line-height: 20px;
-    margin: 20px auto;
+    margin: 40px 0;
     padding: 4px 12px;
     text-align: center;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
@@ -231,12 +233,6 @@
       min-height: 300px;
   }
 
-  .error {
-   min-width: 267px;
-   min-height: 164px;
-  
-  }
-
   .errorBlock {
       display: flex;
       justify-content: center; 
@@ -251,10 +247,15 @@
     font-size: 18px;
     line-height: 21px;
     color: #000000;
+    margin-bottom: 8px;
   }
 
-.try {
-
+.errorUserTry {
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #999999;
 }
-
   

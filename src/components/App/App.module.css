@@ -60,12 +60,6 @@ body {
     cursor: pointer;
 }
 
-img {
-    position: absolute;
-    height: 27px;
-    width: 103px;
-}
-
 .active {
     background-color: #ffd32d;
     list-style-type: none;

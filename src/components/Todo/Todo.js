@@ -102,8 +102,8 @@ class Todo extends React.Component {
                     onFilterChange={this.onFilterChange}
                     onClearCompleted={this.onClearCompleted} />
             </div>
-            <div className={styles.img}>
-            <img src={ReactLogoPng} alt='Разработано в WebHeroSchool' />
+            <div className={styles.imgBlock}>
+            <img src={ReactLogoPng} alt='Разработано в WebHeroSchool' className={styles.whsLogo} />
             </div>
         </div>);
     }
