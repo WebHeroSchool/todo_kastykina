@@ -13,6 +13,7 @@ import contactsTelegramImg from '../../img/telegram.svg';
 import contactsVkImg from '../../img/vk.svg';
 import contactsGithubImg from '../../img/github.svg';
 import contactsInstagramImg from '../../img/instagram.svg';
+import LogoWHS from '../../img/WHS.png';
 
 
 const useStyles = makeStyles({
@@ -42,6 +43,10 @@ export default function MediaCard() {
     display: 'flex',
     justifyContent: 'space-around',
   };
+  const footerStyles = {
+    display: 'flex',
+    justifyContent: 'space-between',
+  }
  
 
 
@@ -77,7 +82,8 @@ export default function MediaCard() {
                   </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions style={footerStyles}>
+        <div className={styles.media}>
         <Button size="small" color="primary">
           <a href="https://vk.com/galigalinochka" className={styles.contactsVk} target="_blank"
                                             rel="noopener noreferrer">
@@ -101,6 +107,8 @@ export default function MediaCard() {
                                             className={styles.contactsInstagramImg}></img>
         </a>
         </Button>
+        </div>
+        <img src={LogoWHS} alt='Разработано в WebHeroSchool' className={styles.whsLogo} />
       </CardActions>
     </Card>
   );

@@ -54,3 +54,14 @@
     font-family: 'Manrope', sans-serif;
     
 }
+
+.media {
+    display: flex;
+    justify-content: space-around;
+}
+
+.whsLogo {
+    height: 27px;
+    width: 103px;
+    padding: 5px 10px;
+}
