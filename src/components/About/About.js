@@ -14,6 +14,7 @@ const octokit = new Octokit();
 
 class About extends React.Component {
     state = {
+        isLoadingUser: true,
         isLoading: true,
         data: [],
         userInfo: [],
@@ -24,6 +25,26 @@ class About extends React.Component {
         perPage: 5,
         currentPage: 0
     }
+    
+    // receivedUserInfo() {
+    //     octokit.users.getByUsername({
+    //         username: 'galigalinochka'
+    //       })
+    //       .then(({ data }) =>{
+        
+    //         this.setState({
+    //             userInfo: data,
+    //             isLoadingUser: false
+    //         });
+    //     })
+    //         .catch(err => {
+    //         this.setState({
+    //             isLoadingUser: false,
+    //             isErrorUser: true,
+    //             errorMessage: err
+    //         });
+    //     });
+    // }
 
     receivedData() {
         octokit.repos.listForUser({
@@ -33,8 +54,10 @@ class About extends React.Component {
             
             
             const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage);
+            console.log(slice);
+            
             const postData = slice.map(repo => <>
-                <ol className={styles.repoLink}>
+                <ul className={styles.repoLink}>
                                     <a key={repo.id} href={repo.html_url} className={styles.link} target="_blank" rel='noopener noreferrer'>
                                         {repo.name}
                                     
@@ -49,11 +72,13 @@ class About extends React.Component {
                                         <div className={styles.aboutRepoStar}>{repo.stargazers_count}</div>
                                         <div className={styles.aboutRepoFork}>{repo.forks_count} </div>
                                         <div className={styles.aboutRepoUpdated}> Обновлен {new Date(repo.updated_at).toLocaleDateString()} </div>
-                                    </li></a> </ol>
+                                    </li></a> </ul>
             </>)
             
-        
+           console.log(postData);
+           
             this.setState({
+                                
                 pageCount: Math.ceil(data.length / this.state.perPage),
                    
                 postData,
@@ -71,25 +96,7 @@ class About extends React.Component {
         });
     }
 
-    receivedUserInfo() {
-        octokit.users.getByUsername({
-            username: 'galigalinochka'
-          })
-          .then(({ data }) =>{
-        
-            this.setState({
-                userInfo: data,
-                isLoading: false
-            });
-        })
-            .catch(err => {
-            this.setState({
-                isLoading: false,
-                isErrorUser: true,
-                errorMessage: err
-            });
-        });
-    }
+    
 
 
     handlePageClick = (e) => {
@@ -106,12 +113,12 @@ class About extends React.Component {
     };
 
     componentDidMount() {
-        this.receivedData()
-        this.receivedUserInfo() 
+        // this.receivedUserInfo()
+        this.receivedData() 
     }
     
     render() {
-        const { isLoading, userInfo, isErrorUser, isErrorRepo, errorMessage } = this.state;
+        const { isLoadingUser, isLoading, userInfo, isErrorUser, isErrorRepo, errorMessage } = this.state;
         const divStyle={
             color: 'red',
             minHeight: '100px',
@@ -119,12 +126,13 @@ class About extends React.Component {
             alignItems: 'center'
         };
          const errMsg = 'Ошибка. Не удалось получить данные о пользователе: ' + errorMessage;
-               
+              
         return (
             
             <div className={styles.wrap}>
-                { isLoading ? <LinearProgress color="secondary" /> : 
+                 
                 <Router>
+                {/* { isLoadingUser ? <LinearProgress color="secondary" /> :
                     <Card>
                         {isErrorUser ?  <div style={divStyle}>{errMsg}</div>:
                             <div>
@@ -142,6 +150,8 @@ class About extends React.Component {
                             </div>
                         }
                     </Card>
+    } */}
+                { isLoading ? <LinearProgress color="secondary" /> :
                    <Card style={{minHeight: '100px'}}>
                     {isErrorRepo ? <div className={styles.errorBlock}>
                           <img src={errorUserImg} alt='no info' style={{marginBottom: '8px'}}/>
@@ -150,7 +160,7 @@ class About extends React.Component {
 
                         </div> 
                         : <>
-                        {this.state.postData.length === 0 ? <div className={styles.errorBlock}>
+                        {/* {this.state.postData.length === 0 ? <div className={styles.errorBlock}>
                             <img src={errorUserImg} alt='no info' style={{marginBottom: '8px'}}/>
                             <span className={styles.errorUserText}>Репозитории отсутствуют</span>
                             <span className={styles.errorUserTry}> Добавьте как минимум один репозиторий на&nbsp;<a href="https://github.com/">github.com</a></span>
@@ -159,8 +169,8 @@ class About extends React.Component {
                         <div className={styles.repozitories}>
                             <h2 className={styles.header2}>Мои репозитории:</h2>
                                 {this.state.postData}
-                    </div> 
-                    {isErrorRepo ? '' :
+                    </div>  */}
+                    {/* {isErrorRepo ? '' : */}
                      <ReactPaginate 
                     previousLabel={"<"}
                     nextLabel={">"}
@@ -173,16 +183,18 @@ class About extends React.Component {
                     containerClassName={styles.pagination}
                     subContainerClassName={styles.pagesPagination}
                     activeClassName={styles.active} /> 
-                }
+                {/* } */}
 
-                    </> } </> 
+                    {/* </> }  */}
+                    </> 
                     }
                       
-                   </Card>  
+                   </Card> 
+    } 
                   
                 </Router> 
                         
-                }
+                
                
             </div>
             
