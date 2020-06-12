@@ -18,13 +18,13 @@ const App = () =>
        <MenuList className = {styles.menu}>
       
   <NavLink exact to="/" className={styles['link']} activeClassName={styles.active}>
-    Обо мне
+    About me
   </NavLink>
   <NavLink to="/todo"className={styles['link']} activeClassName={styles.active}>
-    Дела
+    Todo
   </NavLink>
   <NavLink to="/contacts" className={styles['link']} activeClassName={styles.active}>
-    Контакты
+    Contacts
   </NavLink>
        </MenuList>
        

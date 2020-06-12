@@ -18,11 +18,10 @@ import LogoWHS from '../../img/WHS.png';
 
 const useStyles = makeStyles({
   root: {
-    
     fontFamily: 'Manrope',
   },
   media: {
-    height: 250,
+    height: 260,
     
   },
  
@@ -36,12 +35,14 @@ export default function MediaCard() {
     fontFamily: 'Manrope',
     color: '#a09d9d',
     fontSize: '16px',
-    lineHeight: '1.7'
+    lineHeight: '1.7',
+    cursor: 'default',
   };
   const headerStyles={
     color:'#695646',
     display: 'flex',
     justifyContent: 'space-around',
+    cursor: 'default',
   };
   const footerStyles = {
     display: 'flex',
@@ -76,39 +77,36 @@ export default function MediaCard() {
            . I like coding, and of course I have different hobbies, for example, i've run a marathon 42km195m.
           If you want to know more about me or to ask me a question, please, follow the links under this text)
           I hope that my "marathon of learning code" will continue with getting a cool job in frontend)
-              
-
-              
-                  </Typography>
+           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions style={footerStyles}>
-        <div className={styles.media}>
-        <Button size="small" color="primary">
-          <a href="https://vk.com/galigalinochka" className={styles.contactsVk} target="_blank"
-                                            rel="noopener noreferrer">
+          <div className={styles.media}>
+              <Button size="small" color="primary">
+                <a href="https://vk.com/galigalinochka" className={styles.contactsVk} target="_blank"
+                                                  rel="noopener noreferrer">
                   <img src={contactsVkImg} alt="telegram"
-                                           className={styles.contactsVkImg}></img>
-          </a>
-        </Button>
-        <Button size="small" color="primary">
-          <a href="https://github.com/galigalinochka" className={styles.contactsGithub} target="_blank"
-                                            rel="noopener noreferrer">
-                    <img src={contactsGithubImg} alt="github"
-                                            className={styles.contactsGithubImg}></img>
-          </a>
-         
-          
-        </Button>
-        <Button size="small" color="primary">
-        <a href="https://instagram.com/galigalinochka" className={styles.contactsInstagram} target="_blank"
-                                            rel="noopener noreferrer">
-                    <img src={contactsInstagramImg} alt="github"
-                                            className={styles.contactsInstagramImg}></img>
-        </a>
-        </Button>
-        </div>
-        <img src={LogoWHS} alt='Разработано в WebHeroSchool' className={styles.whsLogo} />
+                                                className={styles.contactsVkImg}></img>
+                </a>
+              </Button>
+              <Button size="small" color="primary">
+                <a href="https://github.com/galigalinochka" className={styles.contactsGithub} target="_blank"
+                                                  rel="noopener noreferrer">
+                  <img src={contactsGithubImg} alt="github"
+                                                  className={styles.contactsGithubImg}></img>
+                </a>
+              
+                
+              </Button>
+              <Button size="small" color="primary">
+                <a href="https://instagram.com/galigalinochka" className={styles.contactsInstagram} target="_blank"
+                                                  rel="noopener noreferrer">
+                  <img src={contactsInstagramImg} alt="github"
+                                                  className={styles.contactsInstagramImg}></img>
+                </a>
+              </Button>
+          </div>
+          <img src={LogoWHS} alt='Разработано в WebHeroSchool' className={styles.whsLogo} />
       </CardActions>
     </Card>
   );

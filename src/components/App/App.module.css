@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
 
 body {
-    padding-top: 36px;
+    padding: 36px 0;
     background: #eee;
     font-family: 'Manrope', sans-serif;
     background-size: 48px 18px;
@@ -10,6 +10,7 @@ body {
     linear-gradient(90deg, #607584 1%, transparent 2%), 
     linear-gradient(45deg, transparent 7%, #607584 10%, transparent 10%, transparent 35%, #607584 37%, transparent 33%), 
     linear-gradient(-45deg, transparent 8%, #E6EBED 10%, transparent 10%, transparent 35%, #E6EBED 37%, transparent 33%);
+    overflow: scroll;
 }
 
 .item {
