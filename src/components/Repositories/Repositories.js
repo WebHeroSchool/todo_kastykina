@@ -22,7 +22,7 @@ class Repositories extends React.Component {
 
     receivedData() {
         octokit.repos.listForUser({
-            username: 'serger'
+            username: 'galighka'
         })
             .then((res) =>{ 
                 const data = res.data;
@@ -50,29 +50,22 @@ class Repositories extends React.Component {
                                     [styles.aboutRepoLanguage_css]: repo.language === 'CSS',
                                     [styles.aboutRepoLanguage_js]: repo.language === 'JavaScript',
                                     [styles.aboutRepoLanguage_null]: repo.language === null,
-                                    [styles.aboutRepoLanguage_null]: repo.language === true
+                                    
                                 })}>
                                 {repo.language}
                                 </div>
                                 <div className={styles.aboutRepoStar}>{repo.stargazers_count}</div>
                                 <div className={styles.aboutRepoFork}>{repo.forks_count} </div>
-                                <div className={styles.aboutRepoUpdated}> Обновлен {new Date(repo.updated_at).toLocaleDateString()} </div>
+                                <div className={styles.aboutRepoUpdated}> Updated {new Date(repo.updated_at).toLocaleDateString()} </div>
                                 </div>  </a>
                         
                     </li>  
                     )}
            
         )
-        console.log(postData);
-        
-            
-
             this.setState({
-                                        
                 pageCount: Math.ceil(data.length / this.state.perPage),
-                
                 postData,
-                
                 isLoading: false
             });
         })
@@ -81,7 +74,7 @@ class Repositories extends React.Component {
                     isLoading: false,
                     isError: true,
                 });
-        });
+            });
     }
 
     handlePageClick = (e) => {

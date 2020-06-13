@@ -57,7 +57,7 @@
     min-width: 96px;
 }
 
-.aboutRepoLanguage_html:before, .aboutRepoLanguage_css:before, .aboutRepoLanguage_js:before, .aboutRepoLanguage_null:before {
+.aboutRepoLanguage_html:before, .aboutRepoLanguage_css:before, .aboutRepoLanguage_js:before, .aboutRepoLanguage_null:before, .aboutRepoLanguage_other:before {
     content: "";
     margin-right: 6px;
     bottom: 5px;
@@ -79,9 +79,11 @@
 }
 
 .aboutRepoLanguage_null:before {
-    background: #5f5b5a; ;
+    background: #5f5b5a;
 }
-
+.aboutRepoLanguage_other:before {
+    background: red;
+}
 
 .aboutRepoStar {
     display: flex;
@@ -184,6 +186,42 @@
     height: 27px;
     width: 103px;
     padding: 5px 10px;
-    
     float: right;
 }
+
+@media(max-width: 630px) {
+    .aboutRepoLanguage_html,
+    .aboutRepoLanguage_css,
+    .aboutRepoLanguage_js,
+    .aboutRepoLanguage_null,
+    .aboutRepoLanguage {
+        display: flex;
+        align-items: center;
+        min-width: 70px;
+    }
+
+    .link {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 453px) {
+    .link {
+        font-size: 12px;
+    }
+
+    .aboutRepoStar:before {
+        margin-right: 0;
+    }
+    .aboutRepoFork:before {
+        margin-right: 0;
+    }
+}
+
+@media(max-width: 375px) {
+    .aboutRepoDetails {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+

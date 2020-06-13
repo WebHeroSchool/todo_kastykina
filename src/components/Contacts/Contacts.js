@@ -47,6 +47,7 @@ export default function MediaCard() {
   const footerStyles = {
     display: 'flex',
     justifyContent: 'space-between',
+    flexWrap: 'wrap',
   }
  
 

@@ -102,7 +102,35 @@
     align-items: center;
 }
 
+@media(max-width: 630px) {
+    .avatar {
+        max-width: 150px;
+        margin-right: 10px;
+        max-height: 150px;
+    }
 
+    .contactsButton {
+        width: 80%; 
+        margin: 0;
+    }
+
+}
+
+
+@media(max-width: 453px) {
+    .contactsButton {
+        width: 90%; 
+    }
+
+    .info {
+        flex-direction: column;
+    }
+
+    .name {
+        line-height: 1;
+    }
+    
+}
 
 
 
