@@ -20,7 +20,7 @@ class About extends React.Component {
     
     receivedUserInfo() {
         octokit.users.getByUsername({
-            username: 'galikda'
+            username: 'galigalinochka'
           })
           .then(({ data }) =>{
         

@@ -22,7 +22,7 @@ class Repositories extends React.Component {
 
     receivedData() {
         octokit.repos.listForUser({
-            username: 'galighka'
+            username: 'galigalinochka'
         })
             .then((res) =>{ 
                 const data = res.data;
