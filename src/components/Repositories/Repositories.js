@@ -6,6 +6,7 @@ import Card from '@material-ui/core/Card';
 import classnames from 'classnames';
 import ReactPaginate from 'react-paginate';
 import errorUserImg from '../../img/error.png';
+import LogoWHS from '../../img/WHS.png';
 
 const octokit = new Octokit();
 
@@ -21,7 +22,7 @@ class Repositories extends React.Component {
 
     receivedData() {
         octokit.repos.listForUser({
-            username: 'galigalinochka'
+            username: 'serger'
         })
             .then((res) =>{ 
                 const data = res.data;
@@ -38,21 +39,25 @@ class Repositories extends React.Component {
                                    className={styles.link}
                                    target="_blank"
                                    rel='noopener noreferrer'>
-                                {repo.name}
-                                </a>
+                                <div className={styles.repoDesc}>    
+                                <span>{repo.name}</span>
+                                <span className={styles.repoDescription}>{repo.description}</span></div> 
+                               
+                               
                                 <div className={styles.aboutRepoDetails}>
                                 <div className={classnames({
                                     [styles.aboutRepoLanguage_html]: repo.language === 'HTML',
                                     [styles.aboutRepoLanguage_css]: repo.language === 'CSS',
                                     [styles.aboutRepoLanguage_js]: repo.language === 'JavaScript',
-                                    [styles.aboutRepoLanguage_null]: repo.language === null
+                                    [styles.aboutRepoLanguage_null]: repo.language === null,
+                                    [styles.aboutRepoLanguage_null]: repo.language === true
                                 })}>
                                 {repo.language}
                                 </div>
                                 <div className={styles.aboutRepoStar}>{repo.stargazers_count}</div>
                                 <div className={styles.aboutRepoFork}>{repo.forks_count} </div>
                                 <div className={styles.aboutRepoUpdated}> Обновлен {new Date(repo.updated_at).toLocaleDateString()} </div>
-                                </div>
+                                </div>  </a>
                         
                     </li>  
                     )}
@@ -140,6 +145,7 @@ class Repositories extends React.Component {
                                 containerClassName={styles.pagination}
                                 subContainerClassName={styles.pagesPagination}
                                 activeClassName={styles.active} />
+                                 <img src={LogoWHS} alt='Разработано в WebHeroSchool' className={styles.whsLogo} />    
                         </div>}
                       </>
                     }

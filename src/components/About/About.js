@@ -64,15 +64,18 @@ class About extends React.Component {
                                     <p className={styles.name}>{userInfo.name ? userInfo.name : userInfo.login}</p>
                                     <p className={styles.bio}>{userInfo.bio ? userInfo.bio : 'Описание профиля отсутствует.' }</p>
                                     <a href="/contacts" style={{textDecoration: 'none'}}>
-                                        <div className={styles.contactsButton}>Посмотреть контакты</div>
+                                        <div className={styles.contactsButton}>Watch contacts</div>
                                     </a>
                                 </div>
                             </div>
                         }
+                        
                     </Card>
                 }
                     <Repositories />
+                    
                 </Router> 
+                 
             </div>
        );
     }

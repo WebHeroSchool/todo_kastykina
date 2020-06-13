@@ -82,7 +82,7 @@ class Todo extends React.Component {
         const visibleItems = this.filter(items, filter);
         const itemsDone = this.state.items.filter((el) => el.isDone).length;
         const itemsLeft = this.state.items.length - itemsDone;
-        const allItems =  visibleItems.length;
+        const allItems =  itemsDone + itemsLeft;
                
         return (
             <div className = {styles.wrap}>

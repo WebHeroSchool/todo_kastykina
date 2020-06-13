@@ -5,19 +5,19 @@ import styles from './Footer.module.css';
 
 
 class Footer extends React.Component {
-
-    buttons = [
-        {name: 'all', label: 'All'},
-        {name: 'active', label: 'Active'},
-        {name: 'completed', label: 'Completed'}
-    ];
-
-    
-
- render() {
- const { count, onFilterChange, onClearCompleted, filter, allItems, itemsDone } = this.props;
+  buttons = [
+    {name: 'all', label: 'All'},
+    {name: 'active', label: 'Active'},
+    {name: 'completed', label: 'Completed'}
+];
  
-  const buttons = this.buttons.map(({name, label}) => {
+   
+ render() {
+  
+const { count, onFilterChange, onClearCompleted, filter, allItems, itemsDone } = this.props;
+
+ 
+const buttons = this.buttons.map(({name, label}) => {
     
       
     const isActive = filter === name;
@@ -38,7 +38,7 @@ class Footer extends React.Component {
  
 
 return(<div className={styles.wrap}>
-        <Button size="medium">
+        <Button size="medium" >
           {count} items left
         </Button>
         <div className={styles.filter} >

@@ -17,13 +17,13 @@ const App = () =>
     <Card className={styles.sidebar}>
        <MenuList className = {styles.menu}>
       
-  <NavLink exact to="/" className={styles['link']} activeClassName={styles.active}>
+  <NavLink exact to="/" className={styles.link} activeClassName={styles.active} >
     About me
   </NavLink>
-  <NavLink to="/todo"className={styles['link']} activeClassName={styles.active}>
+  <NavLink to="/todo"className={styles.link} activeClassName={styles.active}>
     Todo
   </NavLink>
-  <NavLink to="/contacts" className={styles['link']} activeClassName={styles.active}>
+  <NavLink to="/contacts" className={styles.link} activeClassName={styles.active}>
     Contacts
   </NavLink>
        </MenuList>

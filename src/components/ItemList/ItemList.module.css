@@ -10,3 +10,27 @@
     background-repeat: no-repeat;
 }
 
+@media(max-width: 532px) {
+    .itemsNull {
+        height: 250px;
+        padding: 0;
+        background-size: contain;
+        margin: auto;
+        width: 250px;
+    }
+
+}
+
+@media(max-width: 350px) {
+    .ul{
+        padding: 0;
+    }
+    .itemsNull {
+        height: 150px;
+        padding: 0;
+        background-size: contain;
+        margin: auto;
+        width: 150px;
+    } 
+}
+

@@ -34,12 +34,27 @@
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: 600;
+   
 }
 
-.aboutRepoLanguage_html, .aboutRepoLanguage_css, .aboutRepoLanguage_js, .aboutRepoLanguage_null {
+.repoDesc {
+    display: flex;
+    justify-content: space-between;
+}
+
+.repoDescription {
+    width: 50%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    text-align: right;
+}
+
+.aboutRepoLanguage_html, .aboutRepoLanguage_css, .aboutRepoLanguage_js, .aboutRepoLanguage_null, .aboutRepoLanguage {
     display: flex;
     align-items: center;
-    min-width: 82px;
+    min-width: 96px;
 }
 
 .aboutRepoLanguage_html:before, .aboutRepoLanguage_css:before, .aboutRepoLanguage_js:before, .aboutRepoLanguage_null:before {
@@ -67,10 +82,20 @@
     background: #5f5b5a; ;
 }
 
+
+.aboutRepoStar {
+    display: flex;
+    align-items: center;
+}
+
 .aboutRepoStar:before {
     background: url('../../img/Star.svg');
     content: "";
-   
+    margin-right: 6px;
+    bottom: 5px;
+    height: 16px;
+    width: 16px;
+    background-repeat: no-repeat;
 }
 
 .aboutRepoFork {
@@ -154,3 +179,11 @@
       text-decoration: underline;
       cursor: pointer;
   }
+
+  .whsLogo {
+    height: 27px;
+    width: 103px;
+    padding: 5px 10px;
+    
+    float: right;
+}
