@@ -20,6 +20,8 @@ The app was built with the help of
 + Material UI 
 + octokit/rest 
 
+---
+
 ### To start the project:
 
 `npm install`
