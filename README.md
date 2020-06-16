@@ -15,10 +15,10 @@ This react-app consists of three parts:
 Welcome to my project => 
 
 The app was built with the help of 
-classnames 
-react-router-dom 
-Material UI 
-octokit/rest 
++ classnames 
++ react-router-dom 
++ Material UI 
++ octokit/rest 
 
 ### To start the project:
 
