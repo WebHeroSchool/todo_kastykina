@@ -2,6 +2,7 @@ import React from 'react';
 import InputItem  from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
+import ReactLogoPng from '../../img/WHS.png';
 
 import styles from './Todo.module.css';
   
@@ -23,10 +24,9 @@ class Todo extends React.Component {
                value: 'Watch a movie',
                isDone: true,
                id: 3
-           }
-        ],
-        isEmptyField: false,
-        filter: ''
+           }],
+        
+        filter: 'all',
     };
 
     onClickDone = id => {
@@ -44,23 +44,17 @@ class Todo extends React.Component {
     onClickDelete = id => this.setState(state => ({ items: state.items.filter(item => item.id !== id)}));
 
     onClickAdd = value => {
-        if(value !=='') {
-            this.setState(state => ({
-                items: [
-                    ...state.items,
-                    {
-                        value,
-                        isDone: false,
-                        id: this.maxId ++
-                    }
-                ],
-                isEmptyField: false 
-            }));
-        } else {
-            this.setState(state => ({
-                isEmptyField: true}))
-        }
-    };
+        this.setState(state => ({
+            items: [
+                ...state.items,
+                {
+                     value,
+                    isDone: false,
+                    id: this.maxId ++
+                }
+            ],
+        }));
+    }
 
     onFilterChange = (filter) => {
         this.setState({ filter});
@@ -78,23 +72,40 @@ class Todo extends React.Component {
         return items;
        }
     }
-   
+
+    onClearCompleted = () => {
+        this.setState(state => ({ items: state.items.filter(item => !item.isDone)}));
+    }
+    
     render() {
         const { items, filter } = this.state;
         const visibleItems = this.filter(items, filter);
-        const itemsDone = this.state.items.filter((el) => el.isDone).length;
-        const itemsLeft = this.state.items.length - itemsDone;
+        const itemsDone = items.filter((el) => el.isDone).length;
+        const itemsLeft = items.length - itemsDone;
+        const allItems =  itemsDone + itemsLeft;
+        
+               
         return (
             <div className = {styles.wrap}>
             <h1 className = {styles.header}>todos</h1>
             <div className ={styles.todosWrap}>
-            <InputItem  onClickAdd={this.onClickAdd} isEmptyField={this.state.isEmptyField} />
+            <InputItem  onClickAdd={this.onClickAdd}
+                        items={ items } 
+            />
             <ItemList items = { visibleItems }
+                      allItems = { allItems }
                       onClickDone={this.onClickDone}
                       onClickDelete={this.onClickDelete} /> 
             <Footer count = { itemsLeft }
+                    itemsDone = { itemsDone }
+                    allItems={ allItems }
+                    itemsLeft = { itemsLeft  }
                     filter={filter}
-                    onFilterChange={this.onFilterChange} />
+                    onFilterChange={this.onFilterChange}
+                    onClearCompleted={this.onClearCompleted} />
+            </div>
+            <div className={styles.imgBlock}>
+            <img src={ReactLogoPng} alt='Разработано в WebHeroSchool' className={styles.whsLogo} />
             </div>
         </div>);
     }

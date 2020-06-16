@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+.contactsTelegram, .contactsVk, .contactsGithub, .contactsInstagram {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #a09d9d;
+    font-size: 1rem;
+}
+
+.contactsTelegram:hover {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    
+}
+
+.contactsTelegram {
+    padding: 2px;
+}
+
+
+.contactsTelegramImg, .contactsVkImg, .contactsGithubImg, .contactsInstagramImg {
+    width: 25px;
+    height: 25px;
+    padding-right: 5px;
+    display: block;
+    transition: 1s;
+    -o-transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+}
+
+.contactsTelegramImg:hover, .contactsVkImg:hover, .contactsGithubImg:hover, .contactsInstagramImg:hover {
+    
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.school {
+    text-decoration: none; 
+    font-size: 16px;
+    border-radius: 8px;
+    color: #695646;
+    font-weight: bold;
+}
+
+.school:hover {
+    background-color: #ffd32d;
+}
+
+.text {
+    font-family: 'Manrope', sans-serif;
+    
+}
+
+.media {
+    display: flex;
+    justify-content: space-around;
+}
+
+.whsLogo {
+    height: 27px;
+    width: 103px;
+    padding: 5px 10px;
+}
+
+@media(max-width: 350px) {
+    .contactsTelegram {
+        font-size: 10px;
+    }
+}

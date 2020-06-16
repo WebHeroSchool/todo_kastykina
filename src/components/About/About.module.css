@@ -3,27 +3,30 @@
     text-align: center;
 }
 
-.list {
-    padding-left: 50px;
+.userInfo {
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
 }
 
-.listItem {
-    color: #695646;
-}
 
-.header2 {
-    color: #695646;
-    padding-left: 45px;
-}
 
 .avatar {
-    height: 100px;
-    width: 100px;
+    max-width: 200px;
+    margin-right: 20px;
+    max-height: 200px;
+    border-radius: 10px;
+    border: 1px solid #ffd32d;
+}
+
+.infoBlock {
+    flex: 1;
 }
 
 .info {
+    min-height: 150px;
     display: flex;
-    justify-content: space-around;
+    padding: 30px;
 }
 
 .name, .bio {
@@ -31,11 +34,107 @@
     font-weight: bold;
 }
 
-.link {
-    text-decoration: none;
-    color: #695646;
+.contactsButton {
+    width: 50%;
+    background-color: #ffd32d;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333333;
+    text-decoration:none;
+    display:block;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 40px 0;
+    padding: 4px 12px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    position: relative;
+    font-weight: 600;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: transform;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+    
+.contactsButton:before {
+      pointer-events: none;
+      position: absolute;
+      z-index: -1;
+      content: '';
+      top: 100%;
+      left: 5%;
+      height: 10px;
+      width: 90%;
+      opacity: 0;
+      background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: -webkit-transform, opacity;
+      transition-property: transform, opacity;
+    }
+    
+    .contactsButton:hover {
+      -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    .contactsButton:hover:before {
+      opacity: 1;
+      -webkit-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+      transform: translateY(5px);
+    }
+
+
+
+
+.aboutRepoStar {
+    display: flex;
+    align-items: center;
 }
 
-.link:hover {
-    color: blue;
+@media(max-width: 630px) {
+    .avatar {
+        max-width: 150px;
+        margin-right: 10px;
+        max-height: 150px;
+    }
+
+    .contactsButton {
+        width: 80%; 
+        margin: 0;
+    }
 }
+
+
+@media(max-width: 453px) {
+    .contactsButton {
+        width: 90%; 
+    }
+
+    .info {
+        flex-direction: column;
+    }
+
+    .name {
+        line-height: 1;
+    } 
+}
+
+
+
+
+  
+
+
+ 
+  

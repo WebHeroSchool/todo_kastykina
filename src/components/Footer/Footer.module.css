@@ -6,3 +6,18 @@
 .filter {
     display: flex;
 }
+
+@media(max-width: 532px) {
+    .wrap {
+        flex-direction: column;
+        justify-content: center;
+    }  
+    
+    .filter {
+        flex-direction: column;
+    }
+   
+
+}
+
+
