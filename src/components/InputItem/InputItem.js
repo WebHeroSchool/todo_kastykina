@@ -26,7 +26,7 @@ class InputItem extends React.Component {
        if(inputValue ==='' || error) {
           this.setState({
             isError: true,
-            textOfError: error ? "This case is already  in the list, enter another task, please!": "Please, fullfill the field!",
+            textOfError: error ? 'This case is already  in the list, enter another task, please!': 'Please, fullfill the field!',
           });
         }
        else {
@@ -49,13 +49,13 @@ class InputItem extends React.Component {
            onSubmit={this.onSubmit}>
             <TextField
                 error = {isError}
-                id="standard-full-width"
-                label=""
+                id='standard-full-width'
+                label=''
                 style={{ margin: 0}}
-                placeholder= "What needs to be done?"
+                placeholder= 'What needs to be done?'
                 helperText = {textOfError}
                 fullWidth
-                margin="normal"
+                margin='normal'
                 InputLabelProps={{
                 shrink: true,}}
                 value={this.state.inputValue}
