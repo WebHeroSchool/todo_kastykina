@@ -22,11 +22,8 @@ const useStyles = makeStyles({
   },
   media: {
     height: 260,
-    
-  },
- 
-});
-
+   },
+ });
 
 export default function MediaCard() {
   const classes = useStyles();
@@ -50,8 +47,6 @@ export default function MediaCard() {
     flexWrap: 'wrap',
   }
  
-
-
   return (
     <Card className={classes.root} >
       <CardActionArea>
@@ -84,26 +79,36 @@ export default function MediaCard() {
       <CardActions style={footerStyles}>
           <div className={styles.media}>
               <Button size="small" color="primary">
-                <a href="https://vk.com/galigalinochka" className={styles.contactsVk} target="_blank"
-                                                  rel="noopener noreferrer">
-                  <img src={contactsVkImg} alt="telegram"
-                                                className={styles.contactsVkImg}></img>
+                <a href="https://vk.com/galigalinochka"
+                   className={styles.contactsVk}
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  <img src={contactsVkImg}
+                       alt="telegram"
+                       className={styles.contactsVkImg}>
+                  </img>
                 </a>
               </Button>
               <Button size="small" color="primary">
-                <a href="https://github.com/galigalinochka" className={styles.contactsGithub} target="_blank"
-                                                  rel="noopener noreferrer">
-                  <img src={contactsGithubImg} alt="github"
-                                                  className={styles.contactsGithubImg}></img>
+                <a href="https://github.com/galigalinochka"
+                   className={styles.contactsGithub}
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  <img src={contactsGithubImg}
+                       alt="github"
+                       className={styles.contactsGithubImg}>
+                  </img>
                 </a>
-              
-                
               </Button>
               <Button size="small" color="primary">
-                <a href="https://instagram.com/galigalinochka" className={styles.contactsInstagram} target="_blank"
-                                                  rel="noopener noreferrer">
-                  <img src={contactsInstagramImg} alt="github"
-                                                  className={styles.contactsInstagramImg}></img>
+                <a href="https://instagram.com/galigalinochka"
+                   className={styles.contactsInstagram}
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  <img src={contactsInstagramImg}
+                       alt="github"
+                       className={styles.contactsInstagramImg}>
+                  </img>
                 </a>
               </Button>
           </div>

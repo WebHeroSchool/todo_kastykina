@@ -27,14 +27,12 @@
     color: blue;
 }
 
-
 .link {
     text-decoration: none;
     color: #695646;
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: 600;
-   
 }
 
 .repoDesc {
@@ -91,7 +89,7 @@
 }
 
 .aboutRepoStar:before {
-    background: url('../../img/Star.svg');
+    background: url('../../img/star.svg');
     content: "";
     margin-right: 6px;
     bottom: 5px;
@@ -152,31 +150,40 @@
     list-style: none;
     outline: none;
   }
+
   .pagination > .active > a {
     background-color: #ffd32d ;
     border-color: #ffd32d ;
     color: #000000;
   }
+
   .pagination > li > a {
     border: 1px solid #ffd32d ;
     padding: 5px 10px;
     outline: none;
-    cursor: pointer;
+    
   }
+  
+  .pagination > li {
+      cursor: pointer;
+  } 
+
   .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
     background-color: #ffd32d;
     border-color: #ffd32d;
     outline: none ;
+     
   }
-  .pagination > li > a, .pagination > li > span{
-    color: #ffd32d
+
+  .pagination > li > a, .pagination > li > span {
+    color: #ffd32d;  
   }
 
   .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span{
-    border-radius: unset
-  }
+    border-radius: unset;
+   }
 
-  .reload {
+   .reload {
       color: #0000ff;
       text-decoration: underline;
       cursor: pointer;
@@ -187,6 +194,10 @@
     width: 103px;
     padding: 5px 10px;
     float: right;
+}
+
+.pagination > .disabled > a {
+    cursor: default;
 }
 
 @media(max-width: 630px) {

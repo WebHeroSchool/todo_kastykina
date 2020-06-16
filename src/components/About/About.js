@@ -55,7 +55,7 @@ class About extends React.Component {
         return (
              <div className={styles.wrap}>
                 <Router>
-                { isLoading ? <LinearProgress color="secondary" /> :
+                { isLoading ? <LinearProgress color='secondary' /> :
                     <Card>
                         {isError ?  <div style={divStyle}>{errMsg}</div> :
                              <div className={styles.info}>
@@ -63,23 +63,19 @@ class About extends React.Component {
                                 <div className={styles.infoBlock}>
                                     <p className={styles.name}>{userInfo.name ? userInfo.name : userInfo.login}</p>
                                     <p className={styles.bio}>{userInfo.bio ? userInfo.bio : 'Описание профиля отсутствует.' }</p>
-                                    <a href="/contacts" style={{textDecoration: 'none'}}>
+                                    <a href='/contacts' style={{textDecoration: 'none'}}>
                                         <div className={styles.contactsButton}>Watch contacts</div>
                                     </a>
                                 </div>
                             </div>
                         }
-                        
                     </Card>
                 }
-                    <Repositories />
-                    
+                <Repositories />
                 </Router> 
-                 
             </div>
        );
     }
-    
 }
 
 export default About;

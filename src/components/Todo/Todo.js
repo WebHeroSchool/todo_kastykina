@@ -24,8 +24,8 @@ class Todo extends React.Component {
                value: 'Watch a movie',
                isDone: true,
                id: 3
-           }
-        ],
+           }],
+        
         filter: 'all',
     };
 
@@ -80,9 +80,10 @@ class Todo extends React.Component {
     render() {
         const { items, filter } = this.state;
         const visibleItems = this.filter(items, filter);
-        const itemsDone = this.state.items.filter((el) => el.isDone).length;
-        const itemsLeft = this.state.items.length - itemsDone;
+        const itemsDone = items.filter((el) => el.isDone).length;
+        const itemsLeft = items.length - itemsDone;
         const allItems =  itemsDone + itemsLeft;
+        
                
         return (
             <div className = {styles.wrap}>
@@ -92,6 +93,7 @@ class Todo extends React.Component {
                         items={ items } 
             />
             <ItemList items = { visibleItems }
+                      allItems = { allItems }
                       onClickDone={this.onClickDone}
                       onClickDelete={this.onClickDelete} /> 
             <Footer count = { itemsLeft }

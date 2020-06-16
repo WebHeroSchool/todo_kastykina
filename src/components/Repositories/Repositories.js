@@ -26,11 +26,8 @@ class Repositories extends React.Component {
         })
             .then((res) =>{ 
                 const data = res.data;
-                console.log(data);
-                
+                               
                 const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage);
-                console.log(slice);
-                
                            
                 const postData = slice.map(repo => {
                     
@@ -101,7 +98,7 @@ class Repositories extends React.Component {
             <Card style={{minHeight: '100px'}}>
                 {isLoading ? <LinearProgress color="secondary" /> :
                   <>
-                    {isError ? 
+                    {isError && 
                         <div className={styles.errorBlock}>
                             <img src={errorUserImg} alt='no info' style={{marginBottom: '8px'}}/>
                             <span className={styles.errorUserText}>Что-то пошло не так...</span>
@@ -110,7 +107,8 @@ class Repositories extends React.Component {
                                        onClick={() => window.location.reload()}>
                                 загрузить</span>&nbsp;ещё раз
                             </p>
-                        </div> : <>
+                        </div>}
+                        {!isError && <>
                         {postData.length === 0 ? 
                         <div className={styles.errorBlock}>
                             <img src={errorUserImg} alt='no info' style={{marginBottom: '8px'}}/>
@@ -132,12 +130,14 @@ class Repositories extends React.Component {
                                 breakLabel={"..."}
                                 breakClassName={"break-me"}
                                 pageCount={this.state.pageCount}
+                                disabledClassName={styles.disabled}
                                 marginPagesDisplayed={2}
                                 pageRangeDisplayed={5}
                                 onPageChange={this.handlePageClick}
                                 containerClassName={styles.pagination}
                                 subContainerClassName={styles.pagesPagination}
-                                activeClassName={styles.active} />
+                                activeClassName={styles.active}
+                                 />
                                  <img src={LogoWHS} alt='Разработано в WebHeroSchool' className={styles.whsLogo} />    
                         </div>}
                       </>
