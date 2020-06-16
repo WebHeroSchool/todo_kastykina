@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/todo_kastykina/static/css/main.81830a87.chunk.css",
+    "main.js": "/todo_kastykina/static/js/main.b7905f64.chunk.js",
+    "main.js.map": "/todo_kastykina/static/js/main.b7905f64.chunk.js.map",
+    "runtime-main.js": "/todo_kastykina/static/js/runtime-main.3bb243e6.js",
+    "runtime-main.js.map": "/todo_kastykina/static/js/runtime-main.3bb243e6.js.map",
+    "static/js/2.7842cd48.chunk.js": "/todo_kastykina/static/js/2.7842cd48.chunk.js",
+    "static/js/2.7842cd48.chunk.js.map": "/todo_kastykina/static/js/2.7842cd48.chunk.js.map",
+    "index.html": "/todo_kastykina/index.html",
+    "precache-manifest.64e7f9f875bded45ced176e97a5cd342.js": "/todo_kastykina/precache-manifest.64e7f9f875bded45ced176e97a5cd342.js",
+    "service-worker.js": "/todo_kastykina/service-worker.js",
+    "static/css/main.81830a87.chunk.css.map": "/todo_kastykina/static/css/main.81830a87.chunk.css.map",
+    "static/js/2.7842cd48.chunk.js.LICENSE.txt": "/todo_kastykina/static/js/2.7842cd48.chunk.js.LICENSE.txt",
+    "static/media/Repositories.module.css": "/todo_kastykina/static/media/fork.00873795.svg",
+    "static/media/contacts.png": "/todo_kastykina/static/media/contacts.21ef03cd.png",
+    "static/media/error.png": "/todo_kastykina/static/media/error.0eede15b.png",
+    "static/media/github.svg": "/todo_kastykina/static/media/github.e4f2d6b0.svg",
+    "static/media/instagram.svg": "/todo_kastykina/static/media/instagram.e111984e.svg",
+    "static/media/telegram.svg": "/todo_kastykina/static/media/telegram.5e0470a9.svg",
+    "static/media/ItemList.module.css": "/todo_kastykina/static/media/todo_2.bdb72f00.png",
+    "static/media/vk.svg": "/todo_kastykina/static/media/vk.b03024c4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3bb243e6.js",
+    "static/js/2.7842cd48.chunk.js",
+    "static/css/main.81830a87.chunk.css",
+    "static/js/main.b7905f64.chunk.js"
+  ]
+}
