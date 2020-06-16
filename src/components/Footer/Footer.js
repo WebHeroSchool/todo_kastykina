@@ -24,7 +24,7 @@ const buttons = this.buttons.map(({name, label}) => {
     const buttonClass = isActive ? 'contained' : 'text';
           return(
             <Button variant ={`${buttonClass}`}
-                    size="medium"
+                    size='medium'
                     key={name}
                     onClick={() => onFilterChange(name)}>
              {label} ({name ==='all' ? `${allItems}` : false}
@@ -38,13 +38,13 @@ const buttons = this.buttons.map(({name, label}) => {
  
 
 return(<div className={styles.wrap}>
-        <Button size="medium" >
+        <Button size='medium' >
           {count} items left
         </Button>
         <div className={styles.filter} >
           {buttons}
         </div>
-        <Button size="medium" 
+        <Button size='medium' 
                 name ='clear completed'
                 onClick={() => onClearCompleted()}
         >

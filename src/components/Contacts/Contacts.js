@@ -53,60 +53,60 @@ export default function MediaCard() {
         <CardMedia
           className={classes.media}
           image={ ReactLogoPng }
-          title="Contemplative Reptile"
+          title='Contemplative Reptile'
           />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" style={headerStyles}>
+          <Typography gutterBottom variant='h5' component='h2' style={headerStyles}>
             Galina Kastykina
-            <a href="tg://resolve?domain=galinak2017" className={styles.contactsTelegram}>
-                <img src={contactsTelegramImg} alt="telegram" className={styles.contactsTelegramImg}></img>
+            <a href='tg://resolve?domain=galinak2017' className={styles.contactsTelegram}>
+                <img src={contactsTelegramImg} alt='telegram' className={styles.contactsTelegramImg}></img>
                 +79214485808
             </a>
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" style={textStyles}> 
+          <Typography variant='body2' color='textSecondary' component='p' style={textStyles}> 
           Hello, dear guest of my first react-app! Glad to see you)
-          <br/>I'm a student of front-end development school <a href="https://webheroschool.ru/" 
-          alt="WHS" target="_blank"
-          rel="noopener noreferrer"
+          <br/>I'm a student of front-end development school <a href='https://webheroschool.ru/' 
+          alt='WHS' target='_blank'
+          rel='noopener noreferrer'
           className={styles.school}
           > WebHeroSchool</a>
            . I like coding, and of course I have different hobbies, for example, i've run a marathon 42km195m.
           If you want to know more about me or to ask me a question, please, follow the links under this text)
-          I hope that my "marathon of learning code" will continue with getting a cool job in frontend)
+          I hope that my 'marathon of learning code' will continue with getting a cool job in frontend)
            </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions style={footerStyles}>
           <div className={styles.media}>
-              <Button size="small" color="primary">
-                <a href="https://vk.com/galigalinochka"
+              <Button size='small' color='primary'>
+                <a href='https://vk.com/galigalinochka'
                    className={styles.contactsVk}
-                   target="_blank"
-                   rel="noopener noreferrer">
+                   target='_blank'
+                   rel='noopener noreferrer'>
                   <img src={contactsVkImg}
-                       alt="telegram"
+                       alt='telegram'
                        className={styles.contactsVkImg}>
                   </img>
                 </a>
               </Button>
-              <Button size="small" color="primary">
-                <a href="https://github.com/galigalinochka"
+              <Button size='small' color='primary'>
+                <a href='https://github.com/galigalinochka'
                    className={styles.contactsGithub}
-                   target="_blank"
-                   rel="noopener noreferrer">
+                   target='_blank'
+                   rel='noopener noreferrer'>
                   <img src={contactsGithubImg}
-                       alt="github"
+                       alt='github'
                        className={styles.contactsGithubImg}>
                   </img>
                 </a>
               </Button>
-              <Button size="small" color="primary">
-                <a href="https://instagram.com/galigalinochka"
+              <Button size='small' color='primary'>
+                <a href='https://instagram.com/galigalinochka'
                    className={styles.contactsInstagram}
-                   target="_blank"
-                   rel="noopener noreferrer">
+                   target='_blank'
+                   rel='noopener noreferrer'>
                   <img src={contactsInstagramImg}
-                       alt="github"
+                       alt='github'
                        className={styles.contactsInstagramImg}>
                   </img>
                 </a>

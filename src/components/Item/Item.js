@@ -6,7 +6,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 class Item extends React.Component {
     
-
     render() {
         const { value, isDone, onClickDone, id, onClickDelete } = this.props;
     
@@ -15,9 +14,9 @@ class Item extends React.Component {
     
         <Checkbox
                 checked={isDone}
-                color="default"
-                value="default"
-                flex="1"
+                color='default'
+                value='default'
+                flex='1'
                 inputProps={{ 'aria-label': 'checkbox with default color' }}
                 onClick={() => onClickDone(id)}
             />

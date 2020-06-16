@@ -34,7 +34,7 @@ class Repositories extends React.Component {
                     return (<li key={repo.id} className={styles.aboutRepo}>
                         <a href={repo.html_url}
                                    className={styles.link}
-                                   target="_blank"
+                                   target='_blank'
                                    rel='noopener noreferrer'>
                                 <div className={styles.repoDesc}>    
                                 <span>{repo.name}</span>
@@ -55,8 +55,7 @@ class Repositories extends React.Component {
                                 <div className={styles.aboutRepoFork}>{repo.forks_count} </div>
                                 <div className={styles.aboutRepoUpdated}> Updated {new Date(repo.updated_at).toLocaleDateString()} </div>
                                 </div>  </a>
-                        
-                    </li>  
+                     </li>  
                     )}
            
         )
@@ -96,7 +95,7 @@ class Repositories extends React.Component {
         
         return (
             <Card style={{minHeight: '100px'}}>
-                {isLoading ? <LinearProgress color="secondary" /> :
+                {isLoading ? <LinearProgress color='secondary' /> :
                   <>
                     {isError && 
                         <div className={styles.errorBlock}>
@@ -114,8 +113,8 @@ class Repositories extends React.Component {
                             <img src={errorUserImg} alt='no info' style={{marginBottom: '8px'}}/>
                             <span className={styles.errorUserText}>Репозитории отсутствуют</span>
                             <span className={styles.errorUserTry}> Добавьте как минимум один репозиторий на&nbsp;
-                                <a href="https://github.com/"
-                                target="_blank"
+                                <a href='https://github.com/'
+                                target='_blank'
                                 rel='noopener noreferrer'>github.com</a>
                             </span>
                         </div> :
@@ -125,10 +124,10 @@ class Repositories extends React.Component {
                             {postData}
                             
                             <ReactPaginate 
-                                previousLabel={"<"}
-                                nextLabel={">"}
-                                breakLabel={"..."}
-                                breakClassName={"break-me"}
+                                previousLabel={'<'}
+                                nextLabel={'>'}
+                                breakLabel={'...'}
+                                breakClassName={'break-me'}
                                 pageCount={this.state.pageCount}
                                 disabledClassName={styles.disabled}
                                 marginPagesDisplayed={2}
@@ -145,13 +144,8 @@ class Repositories extends React.Component {
                   </>
                 }
             </Card>
-
         )
     }
 }
-
-
-
-
 
 export default Repositories;
