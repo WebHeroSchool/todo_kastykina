@@ -89,7 +89,7 @@
 }
 
 .aboutRepoStar:before {
-    background: url('../../img/star.svg');
+    background: url('../../img/Star.svg');
     content: "";
     margin-right: 6px;
     bottom: 5px;
