@@ -3,7 +3,7 @@ import styles from './About.module.css';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { Octokit } from '@octokit/rest';
 import Card from '@material-ui/core/Card';
-import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Repositories from '../Repositories/Repositories';
 
 
@@ -73,10 +73,8 @@ class About extends React.Component {
                     </Card>
                 }
                 <Repositories />
-                
             </div>
-        
-       );
+        );
     }
 }
 

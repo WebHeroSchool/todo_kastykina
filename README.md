@@ -1,7 +1,7 @@
 
 # React-app
 
-Hello! My name is Galina, this is my final project in [Web Hero School](https://webheroschool.ru/).
+Hello! My name is Galina, this is my final project at [Web Hero School](https://webheroschool.ru/).
 
 ---
 
