@@ -53,7 +53,7 @@ class About extends React.Component {
          const errMsg = 'Ошибка. Не удалось получить данные о пользователе: ' + errorMessage;
               
         return (
-            <Router basename={process.env.PUBLIC_URL}>
+            
               <div className={styles.wrap}>
                
                 { isLoading ? <LinearProgress color='secondary' /> :
@@ -75,7 +75,7 @@ class About extends React.Component {
                 <Repositories />
                 
             </div>
-        </Router> 
+        
        );
     }
 }
