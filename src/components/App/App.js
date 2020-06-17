@@ -8,7 +8,7 @@ import Contacts from '../Contacts/Contacts';
 import styles from './App.module.css';
 
 const App = () =>
- (<Router>
+ (<Router basename={process.env.PUBLIC_URL}>
     <div className={styles.wrap}>
       <Card className={styles.sidebar}>
         <MenuList className = {styles.menu}>
