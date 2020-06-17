@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/todo_kastykina/static/css/main.81830a87.chunk.css",
-    "main.js": "/todo_kastykina/static/js/main.b7905f64.chunk.js",
-    "main.js.map": "/todo_kastykina/static/js/main.b7905f64.chunk.js.map",
+    "main.js": "/todo_kastykina/static/js/main.f5eec9bd.chunk.js",
+    "main.js.map": "/todo_kastykina/static/js/main.f5eec9bd.chunk.js.map",
     "runtime-main.js": "/todo_kastykina/static/js/runtime-main.3bb243e6.js",
     "runtime-main.js.map": "/todo_kastykina/static/js/runtime-main.3bb243e6.js.map",
     "static/js/2.7842cd48.chunk.js": "/todo_kastykina/static/js/2.7842cd48.chunk.js",
     "static/js/2.7842cd48.chunk.js.map": "/todo_kastykina/static/js/2.7842cd48.chunk.js.map",
     "index.html": "/todo_kastykina/index.html",
-    "precache-manifest.64e7f9f875bded45ced176e97a5cd342.js": "/todo_kastykina/precache-manifest.64e7f9f875bded45ced176e97a5cd342.js",
+    "precache-manifest.cc5c886f4b75debdf7bfe90b7866779f.js": "/todo_kastykina/precache-manifest.cc5c886f4b75debdf7bfe90b7866779f.js",
     "service-worker.js": "/todo_kastykina/service-worker.js",
     "static/css/main.81830a87.chunk.css.map": "/todo_kastykina/static/css/main.81830a87.chunk.css.map",
     "static/js/2.7842cd48.chunk.js.LICENSE.txt": "/todo_kastykina/static/js/2.7842cd48.chunk.js.LICENSE.txt",
@@ -25,6 +25,6 @@
     "static/js/runtime-main.3bb243e6.js",
     "static/js/2.7842cd48.chunk.js",
     "static/css/main.81830a87.chunk.css",
-    "static/js/main.b7905f64.chunk.js"
+    "static/js/main.f5eec9bd.chunk.js"
   ]
 }
