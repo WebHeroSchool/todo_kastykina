@@ -12,7 +12,7 @@ This react-app consists of three parts:
 + 'about me' page (where you can find info about me, and watch the list of repositories on GitHub)
 + my contacts ( where is some info about me, my contacts and links to social networks, also, if you have any questions, you can use that info).
 
-Welcome to my project => 
+Welcome to my project => https://webheroschool.github.io/todo_kastykina
 
 The app was built with the help of 
 + classnames 
