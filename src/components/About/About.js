@@ -3,9 +3,9 @@ import styles from './About.module.css';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { Octokit } from '@octokit/rest';
 import Card from '@material-ui/core/Card';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Repositories from '../Repositories/Repositories';
-import Contacts from '../Contacts/Contacts';
+
 
 
 const octokit = new Octokit();
@@ -66,8 +66,7 @@ class About extends React.Component {
                                     <Link to ='/contacts' style={{textDecoration: 'none'}}>
                                         <div className={styles.contactsButton}>Watch contacts</div>
                                     </Link>
-                                    <Route path='/contacts' component={Contacts} />
-                                </div>
+                                 </div>
                             </div>
                         }
                     </Card>
