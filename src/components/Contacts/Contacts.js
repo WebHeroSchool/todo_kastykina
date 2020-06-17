@@ -16,6 +16,7 @@ import contactsInstagramImg from '../../img/instagram.svg';
 import LogoWHS from '../../img/WHS.png';
 
 
+
 const useStyles = makeStyles({
   root: {
     fontFamily: 'Manrope',

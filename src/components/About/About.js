@@ -3,7 +3,7 @@ import styles from './About.module.css';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { Octokit } from '@octokit/rest';
 import Card from '@material-ui/core/Card';
-import { BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Repositories from '../Repositories/Repositories';
 
 
@@ -54,7 +54,7 @@ class About extends React.Component {
               
         return (
              <div className={styles.wrap}>
-                <Router>
+                <Router basename={process.env.PUBLIC_URL}>
                 { isLoading ? <LinearProgress color='secondary' /> :
                     <Card>
                         {isError ?  <div style={divStyle}>{errMsg}</div> :
@@ -63,9 +63,9 @@ class About extends React.Component {
                                 <div className={styles.infoBlock}>
                                     <p className={styles.name}>{userInfo.name ? userInfo.name : userInfo.login}</p>
                                     <p className={styles.bio}>{userInfo.bio ? userInfo.bio : 'Описание профиля отсутствует.' }</p>
-                                    <a href='/contacts' style={{textDecoration: 'none'}}>
+                                    <Link to ='/contacts' style={{textDecoration: 'none'}}>
                                         <div className={styles.contactsButton}>Watch contacts</div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         }
