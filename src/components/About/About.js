@@ -3,7 +3,7 @@ import styles from './About.module.css';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { Octokit } from '@octokit/rest';
 import Card from '@material-ui/core/Card';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import Repositories from '../Repositories/Repositories';
 
 
@@ -53,8 +53,9 @@ class About extends React.Component {
          const errMsg = 'Ошибка. Не удалось получить данные о пользователе: ' + errorMessage;
               
         return (
-             <div className={styles.wrap}>
-                <Router basename={process.env.PUBLIC_URL}>
+            <Router basename={process.env.PUBLIC_URL}>
+              <div className={styles.wrap}>
+               
                 { isLoading ? <LinearProgress color='secondary' /> :
                     <Card>
                         {isError ?  <div style={divStyle}>{errMsg}</div> :
@@ -63,17 +64,18 @@ class About extends React.Component {
                                 <div className={styles.infoBlock}>
                                     <p className={styles.name}>{userInfo.name ? userInfo.name : userInfo.login}</p>
                                     <p className={styles.bio}>{userInfo.bio ? userInfo.bio : 'Описание профиля отсутствует.' }</p>
-                                    <Link to ='/contacts' style={{textDecoration: 'none'}}>
+                                    <NavLink to ='/contacts' style={{textDecoration: 'none'}}>
                                         <div className={styles.contactsButton}>Watch contacts</div>
-                                    </Link>
+                                    </NavLink>
                                  </div>
                             </div>
                         }
                     </Card>
                 }
                 <Repositories />
-                </Router> 
+                
             </div>
+        </Router> 
        );
     }
 }
