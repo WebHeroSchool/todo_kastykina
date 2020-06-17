@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "72ae7a8772040735357bfddae04c1e03",
+    "revision": "09af2b5a080f5accf7f95273c4d17d5b",
     "url": "/todo_kastykina/index.html"
   },
   {
-    "revision": "c2303cace7df7a4028ee",
+    "revision": "7d13c3c2625a79c469d4",
     "url": "/todo_kastykina/static/css/main.81830a87.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/todo_kastykina/static/js/2.7842cd48.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c2303cace7df7a4028ee",
-    "url": "/todo_kastykina/static/js/main.d163f43f.chunk.js"
+    "revision": "7d13c3c2625a79c469d4",
+    "url": "/todo_kastykina/static/js/main.a2c8b4da.chunk.js"
   },
   {
     "revision": "e00ab70345ba964abf64",
