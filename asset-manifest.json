@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/todo_kastykina/static/css/main.81830a87.chunk.css",
-    "main.js": "/todo_kastykina/static/js/main.312c05fa.chunk.js",
-    "main.js.map": "/todo_kastykina/static/js/main.312c05fa.chunk.js.map",
+    "main.js": "/todo_kastykina/static/js/main.80fcee1b.chunk.js",
+    "main.js.map": "/todo_kastykina/static/js/main.80fcee1b.chunk.js.map",
     "runtime-main.js": "/todo_kastykina/static/js/runtime-main.3bb243e6.js",
     "runtime-main.js.map": "/todo_kastykina/static/js/runtime-main.3bb243e6.js.map",
-    "static/js/2.f37c1a36.chunk.js": "/todo_kastykina/static/js/2.f37c1a36.chunk.js",
-    "static/js/2.f37c1a36.chunk.js.map": "/todo_kastykina/static/js/2.f37c1a36.chunk.js.map",
+    "static/js/2.d943abb2.chunk.js": "/todo_kastykina/static/js/2.d943abb2.chunk.js",
+    "static/js/2.d943abb2.chunk.js.map": "/todo_kastykina/static/js/2.d943abb2.chunk.js.map",
     "index.html": "/todo_kastykina/index.html",
-    "precache-manifest.4784b5650a4eaf304beaf620680e7b7a.js": "/todo_kastykina/precache-manifest.4784b5650a4eaf304beaf620680e7b7a.js",
+    "precache-manifest.719b23912d3bd8311aa92bf17e233a78.js": "/todo_kastykina/precache-manifest.719b23912d3bd8311aa92bf17e233a78.js",
     "service-worker.js": "/todo_kastykina/service-worker.js",
     "static/css/main.81830a87.chunk.css.map": "/todo_kastykina/static/css/main.81830a87.chunk.css.map",
-    "static/js/2.f37c1a36.chunk.js.LICENSE.txt": "/todo_kastykina/static/js/2.f37c1a36.chunk.js.LICENSE.txt",
+    "static/js/2.d943abb2.chunk.js.LICENSE.txt": "/todo_kastykina/static/js/2.d943abb2.chunk.js.LICENSE.txt",
     "static/media/Repositories.module.css": "/todo_kastykina/static/media/fork.00873795.svg",
     "static/media/contacts.png": "/todo_kastykina/static/media/contacts.21ef03cd.png",
     "static/media/error.png": "/todo_kastykina/static/media/error.0eede15b.png",
-    "static/media/github.svg": "/todo_kastykina/static/media/github.e4f2d6b0.svg",
+    "static/media/github.svg": "/todo_kastykina/static/media/github.0f783a95.svg",
     "static/media/instagram.svg": "/todo_kastykina/static/media/instagram.e111984e.svg",
     "static/media/telegram.svg": "/todo_kastykina/static/media/telegram.5e0470a9.svg",
     "static/media/ItemList.module.css": "/todo_kastykina/static/media/todo_2.bdb72f00.png",
@@ -23,8 +23,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.3bb243e6.js",
-    "static/js/2.f37c1a36.chunk.js",
+    "static/js/2.d943abb2.chunk.js",
     "static/css/main.81830a87.chunk.css",
-    "static/js/main.312c05fa.chunk.js"
+    "static/js/main.80fcee1b.chunk.js"
   ]
 }
