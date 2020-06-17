@@ -3,9 +3,9 @@ import styles from './About.module.css';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { Octokit } from '@octokit/rest';
 import Card from '@material-ui/core/Card';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Repositories from '../Repositories/Repositories';
-
+import Contacts from '../Contacts/Contacts';
 
 
 const octokit = new Octokit();
@@ -63,9 +63,10 @@ class About extends React.Component {
                                 <div className={styles.infoBlock}>
                                     <p className={styles.name}>{userInfo.name ? userInfo.name : userInfo.login}</p>
                                     <p className={styles.bio}>{userInfo.bio ? userInfo.bio : 'Описание профиля отсутствует.' }</p>
-                                    <Link to ='/todo_kastykina/contacts' style={{textDecoration: 'none'}}>
+                                    <Link to ='/contacts' style={{textDecoration: 'none'}}>
                                         <div className={styles.contactsButton}>Watch contacts</div>
                                     </Link>
+                                    <Route path='/contacts' component={Contacts} />
                                 </div>
                             </div>
                         }
