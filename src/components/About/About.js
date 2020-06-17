@@ -63,7 +63,7 @@ class About extends React.Component {
                                 <div className={styles.infoBlock}>
                                     <p className={styles.name}>{userInfo.name ? userInfo.name : userInfo.login}</p>
                                     <p className={styles.bio}>{userInfo.bio ? userInfo.bio : 'Описание профиля отсутствует.' }</p>
-                                    <Link to ='/contacts' style={{textDecoration: 'none'}}>
+                                    <Link to ='/todo_kastykina/contacts' style={{textDecoration: 'none'}}>
                                         <div className={styles.contactsButton}>Watch contacts</div>
                                     </Link>
                                 </div>
