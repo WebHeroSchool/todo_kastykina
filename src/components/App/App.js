@@ -8,11 +8,11 @@ import Contacts from '../Contacts/Contacts';
 import styles from './App.module.css';
 
 const App = () =>
- (<Router basename={"/todo_kastykina"}>
+ (<Router basename={process.env.PUBLIC_URL}>
     <div className={styles.wrap}>
       <Card className={styles.sidebar}>
         <MenuList className = {styles.menu}>
-            <NavLink exact to='/' className={styles.link} activeClassName={styles.active} >
+            <NavLink exact to={process.env.PUBLIC_URL + '/'} className={styles.link} activeClassName={styles.active} >
               About me
             </NavLink>
             <NavLink to={process.env.PUBLIC_URL + '/todo'} className={styles.link} activeClassName={styles.active}>
@@ -25,7 +25,7 @@ const App = () =>
       </Card>
       
       <Card className={styles.content}>
-          <Route path='/' exact component={About} />
+          <Route path={process.env.PUBLIC_URL + '/'} exact component={About} />
           <Route path={process.env.PUBLIC_URL + '/todo'} component={Todo} />
           <Route path={process.env.PUBLIC_URL + '/contacts'} component={Contacts} />
       </Card>
