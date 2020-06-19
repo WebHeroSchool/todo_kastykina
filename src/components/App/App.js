@@ -15,10 +15,10 @@ const App = () =>
             <NavLink exact to='/' className={styles.link} activeClassName={styles.active} >
               About me
             </NavLink>
-            <NavLink to='/todo'className={styles.link} activeClassName={styles.active}>
+            <NavLink to={process.env.PUBLIC_URL + '/todo'} className={styles.link} activeClassName={styles.active}>
               Todo
             </NavLink>
-            <NavLink to='/contacts' className={styles.link} activeClassName={styles.active}>
+            <NavLink to={process.env.PUBLIC_URL + '/contacts'} className={styles.link} activeClassName={styles.active}>
               Contacts
             </NavLink>
         </MenuList>
