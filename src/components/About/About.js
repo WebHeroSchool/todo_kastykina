@@ -62,7 +62,7 @@ class About extends React.Component {
                                 <div className={styles.infoBlock}>
                                     <p className={styles.name}>{userInfo.name ? userInfo.name : userInfo.login}</p>
                                     <p className={styles.bio}>{userInfo.bio ? userInfo.bio : 'Описание профиля отсутствует.' }</p>
-                                    <NavLink to ={process.env.PUBLIC_URL + '/contacts'} style={{textDecoration: 'none'}}>
+                                    <NavLink to ='/contacts' style={{textDecoration: 'none'}}>
                                         <div className={styles.contactsButton}>Watch contacts</div>
                                     </NavLink>
                                  </div>
