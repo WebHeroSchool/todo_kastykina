@@ -53,9 +53,7 @@ class About extends React.Component {
          const errMsg = 'Ошибка. Не удалось получить данные о пользователе: ' + errorMessage;
               
         return (
-            
-              <div className={styles.wrap}>
-               
+            <div className={styles.wrap}>
                 { isLoading ? <LinearProgress color='secondary' /> :
                     <Card>
                         {isError ?  <div style={divStyle}>{errMsg}</div> :

@@ -26,10 +26,9 @@ const App = () =>
       
       <Card className={styles.content}>
           <Route path='/' exact component={About} />
-          <Route path='/todo' component={Todo} />
-          <Route path='/contacts' component={Contacts} />
+          <Route path={process.env.PUBLIC_URL + '/todo'} component={Todo} />
+          <Route path={process.env.PUBLIC_URL + '/contacts'} component={Contacts} />
       </Card>
-      
     </div>
  </Router> 
 );
